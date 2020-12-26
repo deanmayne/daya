@@ -4,15 +4,34 @@ const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
+const passport = require('passport');
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
+
+// Private Auth Route
+router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+    res.json({
+    id: req.user.id,
+    username: req.user.username
+  });
+})
+
 // Create User 
 router.post("/register", (req, res) => {
+ const { errors, isValid } = validateRegisterInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   User.findOne({ username: req.body.username }).then(user => {
     if (user) {
-      return res.status(400).json({username: "User already exists"});
+        errors.username = 'Username already exists';
+        return res.status(400).json(errors);
+    //   return res.status(400).json({username: "User already exists"});
     } else {
       const newUser = new User({
         username: req.body.username,
@@ -34,11 +53,11 @@ router.post("/register", (req, res) => {
 
 // Login User 
 router.post('/login', (req, res) => {
-    // const {errors, isValid } = validateLoginInput(req.body);
+    const {errors, isValid } = validateLoginInput(req.body);
 
-    // if(!isValid) {
-    //     return res.status(400).json(errors)
-    // }
+    if(!isValid) {
+        return res.status(400).json(errors)
+    }
     
     const username = req.body.username;
     const password = req.body.password; 
@@ -46,9 +65,9 @@ router.post('/login', (req, res) => {
     User.findOne({username})
         .then(user => {
             if(!user){
-                // errors.username = 'user not found';
-                // return res.status(400).json(errors);
-                return res.status(400).json('user doesnt exist')
+                errors.username = 'user not found';
+                return res.status(400).json(errors);
+                // return res.status(400).json('user doesnt exist')
             }
 
             bcrypt.compare(password, user.password)
@@ -67,9 +86,9 @@ router.post('/login', (req, res) => {
                                 });
                             });
                     } else {
-                        // errors.password = "Incorrect Password";
-                        // return res.status(400).json(errors);
-                        return res.status(400).json('wrong password')
+                        errors.password = "Incorrect Password";
+                        return res.status(400).json(errors);
+                        // return res.status(400).json('wrong password')
                     }
                 });
         });
