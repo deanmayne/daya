@@ -1,5 +1,5 @@
 {
-  "name": "Daya",
+  "name": "daya",
   "version": "1.0.0",
   "description": "A social calendar feed.",
   "main": "app.js",
@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "author": "",
-  "license": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
@@ -26,5 +26,13 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deanmayne/daya.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deanmayne/daya/issues"
+  },
+  "homepage": "https://github.com/deanmayne/daya#readme"
 }
