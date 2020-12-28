@@ -17,6 +17,6 @@ export const writeEvent = (data) => {
   return axios.post("/api/events/", data);
 };
 
-export const updateEvent = (event, data) => {
-  return axios.post(`/api/events/${event.id}`, data);
+export const updateEvent = (event) => {
+  return axios.post(`/api/events/${event.id}`, event);
 };
