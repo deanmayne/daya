@@ -1,7 +1,7 @@
 // inclusion for category and not empty for title 
 
 const Validator = require('validator');
-const validText = require('./valid-text');
+const validText = require('./valid_text');
 
 module.exports = function validateEventInput(data) {
   let errors = {};
