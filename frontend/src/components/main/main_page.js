@@ -9,7 +9,6 @@ class MainPage extends React.Component {
                 <NavBar />
                 {/* <h1>DAYA (main page header)</h1> */}
                 {/* <EventIndexContainer/> */}
-
             </div>
         );
     }
