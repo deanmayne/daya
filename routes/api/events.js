@@ -30,7 +30,7 @@ router.post('/',
   );
 
 // Update Event
-  router.patch('/:id',
+  router.patch('/events/:event_id',
     passport.authenticate('jwt', { session: false }),
     async (req, res) => {
       const { errors, isValid } = validateEventInput(req.body);
@@ -39,7 +39,7 @@ router.post('/',
         return res.status(400).json(errors);
       }
   
-      const updatedEvent = await Event.findByIdAndUpdate(req.params.id,
+      const updatedEvent = await Event.findByIdAndUpdate(req.params.event_id,
         {
             title: title || req.body.title, 
             category: category || req.body.category
@@ -49,7 +49,25 @@ router.post('/',
 
       updatedEvent.save().then(event => res.send(event))
     }
-  
   );
 
+  router.delete('/events/:event_id', passport.authenticate('jwt', { session: false }), 
+    (req, res) => {
+      Event.deleteOne({_id: req.params.event_id})
+        .then(event => {res.json(event)})
+        .catch(event => res.status(404).json({ noeventfound: 'No Event Found' }))
+  })
 
+
+// A Single Users Events (upcoming events page) 
+  router.get('/user/:user_id', (req, res) => {
+    Event.find({user: req.params.user_id})
+        .sort({ date: -1})
+        .then(events => res.json(events))
+        .catch(err =>
+            res.status(404).json({ noeventsfound: 'No Events Found' }
+        )
+    );
+});
+
+module.exports = router;
