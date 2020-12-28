@@ -1,0 +1,10 @@
+.user-auth-button {
+    border: none;
+    outline: none;
+
+}
+
+#button-container {
+    display: flex;
+}
+
