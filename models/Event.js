@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const EventSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: "users",
+    ref: "User",
   },
   title: {
     type: String,
@@ -20,4 +20,5 @@ const EventSchema = new Schema({
   },
 });
 
-module.exports = User = mongoose.model("Event", EventSchema);
+module.exports = Event = mongoose.model('Event', EventSchema);
+

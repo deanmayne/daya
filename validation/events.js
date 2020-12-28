@@ -1,7 +1,7 @@
 // inclusion for category and not empty for title 
 
 const Validator = require('validator');
-const validText = require('./valid-text');
+const validText = require('./valid_text');
 
 module.exports = function validateEventInput(data) {
   let errors = {};
@@ -13,7 +13,7 @@ module.exports = function validateEventInput(data) {
   }
 
   if (!Validator.contains('social work school', data.category)){
-      errors.catgory = 'Category field is required'
+      errors.category = 'Category field is required'
   }
 
   return {

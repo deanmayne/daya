@@ -21,11 +21,11 @@ class EventIndex extends React.Component {
 
   render() {
     if (this.state.events.length === 0) {
-      return <div>No events found ! Go add some !</div>;
+      return <div className="event-index--error">No events found ! Go add some !</div>;
     } else {
       return (
-        <div>
-          <h2>Events</h2>
+        <div className="event-index">
+          <h2 className="event-index__header">Events</h2>
           {this.state.events.map((event) => (
             <EventIndexItem key={event._id} event={event} />
           ))}
