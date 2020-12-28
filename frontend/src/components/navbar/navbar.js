@@ -48,11 +48,10 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <div >
 
                     
                     { this.getLinks()}
-                </div>
+    
             </div>
         )
     }
