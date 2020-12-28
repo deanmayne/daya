@@ -13,7 +13,7 @@ module.exports = function validateEventInput(data) {
   }
 
   if (!Validator.contains('social work school', data.category)){
-      errors.catgory = 'Category field is required'
+      errors.category = 'Category field is required'
   }
 
   return {
