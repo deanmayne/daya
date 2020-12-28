@@ -5,7 +5,7 @@ export const getEvents = () => {
 };
 
 
-export const getUserEvents = (git ) => {
+export const getUserEvents = (user_id) => {
   return axios.get(`/api/events/user/${user_id}`);
 };
 
@@ -17,6 +17,6 @@ export const writeEvent = (data) => {
   return axios.post("/api/events/", data);
 };
 
-export const updateEvent = (data) => {
-  return axios.post(`/api/events/${event_id}`, data);
+export const updateEvent = (event, data) => {
+  return axios.post(`/api/events/${event.id}`, data);
 };

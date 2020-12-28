@@ -27,6 +27,7 @@ class LoginForm extends React.Component {
 
     // Handle field updates (called in the render method)
     update(field) {
+        debugger
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -48,9 +49,9 @@ class LoginForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
+                {Object.keys(this.props.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.props.errors[error]}
                     </li>
                 ))}
             </ul>
