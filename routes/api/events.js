@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-const Event = require ('../../models/Event')
+const Event = require('../../models/Event')
 const validateEventInput = require('../../validation/events');
 
 //   do the get requests need to be protected? how to deal with following situation
@@ -30,7 +30,7 @@ router.post('/',
   );
 
 // Update Event
-  router.patch('/events/:event_id',
+  router.patch('/:event_id',
     passport.authenticate('jwt', { session: false }),
     async (req, res) => {
       const { errors, isValid } = validateEventInput(req.body);
@@ -41,8 +41,8 @@ router.post('/',
   
       const updatedEvent = await Event.findByIdAndUpdate(req.params.event_id,
         {
-            title: title || req.body.title, 
-            category: category || req.body.category
+            title: req.body.title, 
+            category: req.body.category
         }, { new: true}
         );
 
@@ -51,11 +51,11 @@ router.post('/',
     }
   );
 
-  router.delete('/events/:event_id', passport.authenticate('jwt', { session: false }), 
+  router.delete('/:event_id', passport.authenticate('jwt', { session: false }), 
     (req, res) => {
       Event.deleteOne({_id: req.params.event_id})
-        .then(event => {res.json(event)})
-        .catch(event => res.status(404).json({ noeventfound: 'No Event Found' }))
+        .then(event => res.json({eventdeleted: 'Event Deleted'}))
+        .catch(err => res.status(404).json({ noeventfound: 'No Event Found' }))
   })
 
 

@@ -32,12 +32,17 @@ class NavBar extends React.Component {
                         <h2 id="nav-header">DAYA</h2>
                         <div id="button-container">
     
-                        <Link to={'/signup'}><button className="user-auth-button">Sign Up</button></Link>
                         <Link to={'/login'}><button className="user-auth-button">Log In</button></Link>
+                        <Link to={'/signup'}><button className="user-auth-button" id="sign-up">Sign Up</button></Link>
                         </div>
                     </div>
                     <div id="img-container">
+                        <div id="header-container">
                         <h1 id="nav-header">the social planner</h1>
+                        <text id="splash-description"> Organize your calendar and easily share it with your friends. </text>
+                        <Link to={'/signup'}><button className="user-auth-button" id="sign-up">Sign Up</button></Link> 
+
+                        </div>
                         <img id="splash-img" alt="pic" src="splash_img.jpg" /> 
                     </div>
                 </div>
