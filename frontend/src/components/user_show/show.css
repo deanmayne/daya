@@ -47,6 +47,8 @@
 }
 
 #edit-button {
+    border: none;
+    outline: none;
     border-radius: 8px;
     color: white;
     font-weight: 700px;
@@ -57,7 +59,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
+
 } 
+
+#edit-button:focus {
+    border: none;
+    outline: none;
+}
 /* 
 #button-text {
     display: flex;

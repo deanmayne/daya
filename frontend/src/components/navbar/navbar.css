@@ -38,6 +38,7 @@
     padding-left: 20px;
     font-family: Lato, sans-serif;
     font-weight: 700;
+    color: darkslateblue;
 }
 
 #splash-img {
@@ -53,17 +54,46 @@
     width: 360px;
 }
 
-#sign-up {
+/* #sign-up {
     border-radius: 8px;
     color: white;
     font-weight: 700px;
     background-color:darkslateblue;
     height: 34px;
     width: 100px;
+    font-size: 30px;
     
+} */
+
+#edit-button:hover {
+    background-color: mediumslateblue;
+    cursor: pointer;
 }
 
 #splash-description {
     /* display: flex; */
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: none;
+}
+
+#login {
+    color: darkslateblue;
+    font-size: 16px;
+    height: 34px;
+    width: 100px;
+    /* vertical-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+#login:hover {
+    /* background-color: mediumslateblue; */
+    cursor: pointer;
 }
