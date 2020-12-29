@@ -4,13 +4,14 @@ import UserShow from './user_show';
 
 const mapStateToProps = (state) => {
      return ({
-         user: state.session.user
+         user: state.session.user,
+         events: state.events.all
      })
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return({
-        userEvents: (ownProps.match.params.user_id)
+        userEvents: userId => dispatch(fetchUserEvents(userId))
     })
 }
 
