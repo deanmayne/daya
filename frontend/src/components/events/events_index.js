@@ -12,7 +12,7 @@ class EventIndex extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchEvents();
   }
 
