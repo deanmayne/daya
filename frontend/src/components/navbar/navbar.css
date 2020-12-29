@@ -57,9 +57,10 @@
     border-radius: 8px;
     color: white;
     font-weight: 700px;
-    background-color:rgba(24,0,69,0.7);
+    background-color:darkslateblue;
     height: 34px;
     width: 100px;
+    
 }
 
 #splash-description {
