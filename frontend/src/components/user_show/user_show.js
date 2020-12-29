@@ -17,9 +17,6 @@ class UserShow extends React.Component {
     }
     render () {
         debugger
-        if (this.state.render === 0 || !this.state.user) {
-            return null;
-        } else {
         if (!this.props.event) {
             return (
                 <div>
@@ -61,6 +58,6 @@ class UserShow extends React.Component {
         }
     }
 }
-}
+
 
 export default UserShow;
