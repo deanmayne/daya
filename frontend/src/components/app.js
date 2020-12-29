@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect, Route } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import NewsfeedContainer from './newsfeed/newsfeed_container';
 import MainPage from './main/main_page';
@@ -11,10 +11,10 @@ const App = () => (
     <div>
         {/* <NavBarContainer /> */}
         <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Redirect from="/home" to="/" />
-            <AuthRoute exact path="/" component={MainPage} />
+            <Route exact path="/login" component={LoginFormContainer} />
+            <Route exact path="/signup" component={SignupFormContainer} />
+            {/* <Redirect from="/home" to="/" /> */}
+            <Route exact path="/" component={MainPage} />
         </Switch>
     </div>
 );
