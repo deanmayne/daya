@@ -70,4 +70,13 @@ router.post('/',
     );
 });
 
+// Get All Events: 
+
+router.get('/', (req, res) => {
+    Event.find()
+        .sort({date: -1 })
+        .then(events => res.json(events))
+        .catch(err => res.status(404).json({ noEventsFound: 'No Events found'}));
+});
+
 module.exports = router;
