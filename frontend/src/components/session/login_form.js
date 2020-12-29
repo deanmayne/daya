@@ -16,6 +16,10 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
+    componentDidMount() {
+
+    }
+
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
