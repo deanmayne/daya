@@ -16,13 +16,14 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    componentDidMount() {
+    // componentDidMount() {
 
-    }
+    // }
 
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
+            this.setState( {user: nextProps.currentUser})
             this.props.history.push('/newsfeed'); //come back to this
         }
 
@@ -32,7 +33,7 @@ class LoginForm extends React.Component {
 
     // Handle field updates (called in the render method)
     update(field) {
-        debugger
+        
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -46,9 +47,9 @@ class LoginForm extends React.Component {
             username: this.state.username,
             password: this.state.password
         };
-
+        debugger
         this.props.login(user);
-        this.props.history.push("/home")
+        // this.props.history.push("/home")
     }
 
     // Render the session errors if there are any
