@@ -1,0 +1,36 @@
+.continue {
+    /* background-color: rgb(106, 79, 235); */
+    background-color: rgba(24,0,69,0.7);
+    color: white;
+    border-radius: 5%;
+}
+
+.login {
+    color: rgb(24, 0, 69);
+    font-family: lato;
+    font-size: 40px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    /* height: 1000px; */
+    align-items: center;
+}
+
+
+.login-form > input, button {
+    padding: 10px;
+    margin-top: 13px;
+}
+
+.login-form > input {
+    width: 248px;
+}
+
+.login-form > button{
+    width: 271px;
+}

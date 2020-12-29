@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './login.css'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class LoginForm extends React.Component {
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/tweets');
+            // this.props.history.push('/tweets');
         }
 
         // Set or clear errors
@@ -43,6 +44,7 @@ class LoginForm extends React.Component {
         };
 
         this.props.login(user);
+        
     }
 
     // Render the session errors if there are any
@@ -60,9 +62,10 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className="login">Log in</div>
+                    <div className="login-form">
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
@@ -75,7 +78,8 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <button className="continue" type="submit">Continue</button>
+                        {/* <input type="submit" value="Submit" /> */}
                         {this.renderErrors()}
                     </div>
                 </form>
