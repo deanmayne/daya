@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import EventIndexItem from './event_index_item';
+import './events.css';
 
 class EventIndex extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class EventIndex extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchEvents();
   }
 
