@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
         };
         debugger
         this.props.login(user);
-        // this.props.history.push("/home")
+        this.props.history.push(`/calendar/${this.state.username}`)
     }
 
     // Render the session errors if there are any
