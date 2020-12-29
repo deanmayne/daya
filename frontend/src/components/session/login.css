@@ -17,7 +17,7 @@
 .login-container {
     display: flex;
     justify-content: center;
-    height: 1000px;
+    /* height: 1000px; */
     align-items: center;
 }
 
