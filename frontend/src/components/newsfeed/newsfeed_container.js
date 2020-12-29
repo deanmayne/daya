@@ -4,7 +4,8 @@ import Newsfeed from './newsfeed'
 
 const mapStateToProps = (state) => {
     return ({
-       currentUser: state.session.user
+       currentUser: state.session.user,
+       events: Object.values(state.events)
     })
 }
 

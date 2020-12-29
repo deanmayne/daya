@@ -1,16 +1,47 @@
-import React from 'react';
+import React from "react";
+import NewsfeedItem from './newsfeeditem';
+
 
 class Newsfeed extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
+  constructor(props) {
+    super(props);
+    // this.state = {  }
+  }
+
+  componentDidMount() {
+    this.props.fetchEvents();
+  }
+
+  render() {
+    console.log(this.props);
+    
+    // const {following} = this.props.currentUser.following;
+
+    const {events} = this.props;
+
+    if (!this.props.currentUser) {
+      return null;
+    } else {
+      if (this.props.currentUser.following.length === 0) {
+        return <div>You're not following anyone here are suggestions:</div>;
+      } else {
+        return (
+            <div>
+                <div>your followers stuff </div>
+                {events.map(event => {
+
+                  if (this.props.currentUser.following.includes(event.user)){
+                    return <NewsfeedItem key={event._id} event={event} />
+                  }
+                    
+                })}
+
+            </div>
+            
+        );
+      }
     }
-    render() { 
-        console.log(this.props)
-        return ( 
-            <div>Hello</div>
-         );
-    }
+  }
 }
- 
+
 export default Newsfeed;

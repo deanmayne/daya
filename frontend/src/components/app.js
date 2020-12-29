@@ -6,7 +6,7 @@ import NewsfeedContainer from './newsfeed/newsfeed_container';
 import SplashPage from './main/splash_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import UserShow from './user_show/user_show'
+import UserShowContainer from './user_show/user_show_container'
 import Newsfeed from './newsfeed/newsfeed_container'
 
 const App = () => (

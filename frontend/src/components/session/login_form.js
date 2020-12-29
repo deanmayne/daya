@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
             this.setState( {user: nextProps.currentUser})
-            this.props.history.push('/newsfeed'); //come back to this
+            // this.props.history.push('/newsfeed'); //come back to this
         }
 
         // Set or clear errors
@@ -49,7 +49,8 @@ class LoginForm extends React.Component {
         };
         // debugger
         this.props.login(user);
-        this.props.history.push(`/calendar/${this.state.username}`)
+        this.props.history.push('/newsfeed')
+        // this.props.history.push(`/calendar/${this.state.username}`)
     }
 
     // Render the session errors if there are any
