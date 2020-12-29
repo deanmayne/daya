@@ -63,24 +63,26 @@ router.post("/register", (req, res) => {
 
 // Login User 
 router.post('/login', (req, res) => {
-    const {errors, isValid } = validateLoginInput(req.body);
-
-    if(!isValid) {
-        return res.status(400).json(errors)
+  
+  const {errors, isValid } = validateLoginInput(req.body);
+  
+  if(!isValid) {
+    return res.status(400).json(errors)
+  }
+  
+  const username = req.body.username;
+  const password = req.body.password; 
+  
+  User.findOne({username})
+  .then(user => {
+    if(!user){
+      errors.username = 'user not found';
+      return res.status(400).json(errors);
+      // return res.status(400).json('user doesnt exist')
     }
     
-    const username = req.body.username;
-    const password = req.body.password; 
-
-    User.findOne({username})
-        .then(user => {
-            if(!user){
-                errors.username = 'user not found';
-                return res.status(400).json(errors);
-                // return res.status(400).json('user doesnt exist')
-            }
-
-            bcrypt.compare(password, user.password)
+    // debugger; 
+    bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if(isMatch) {
                         const payload = {id: user.id, username: user.username};
@@ -104,6 +106,38 @@ router.post('/login', (req, res) => {
         });
 
 });
+
+
+// all users 
+router.get('/', (req, res) => {
+  User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(404).json({users: "No Users Found"}))
+})
+
+
+// following route 
+router.post('/:username/follow', passport.authenticate('jwt', {session: false}), (req, res) => {
+
+  let currentUser = req.user
+  
+  User.findOne({username: req.params.username})
+    .then(user => currentUser.follow(user.id))
+    .then(user => res.json({follows: user.following}))
+
+})
+
+router.delete('/:username/unfollow', passport.authenticate('jwt', {session: false}), (req, res) => {
+
+  let currentUser = req.user
+
+    User.findOne({username: req.params.username})
+      .then(user => currentUser.unfollow(user.id))
+      .then(user => res.json({follows: user.following}))
+})
+
+
+
 
 
 module.exports = router;
