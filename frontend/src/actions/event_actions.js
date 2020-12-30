@@ -24,8 +24,8 @@ export const fetchEvents = () => (dispatch) =>
     .then((events) => dispatch(receiveEvents(events)))
     .catch((err) => console.log(err));
 
-export const fetchUserEvents = (id) => (dispatch) =>
-  getUserEvents(id)
+export const fetchUserEvents = (username) => (dispatch) =>
+  getUserEvents(username)
     .then((events) => dispatch(receiveUserEvents(events)))
     .catch((err) => console.log(err));
 
