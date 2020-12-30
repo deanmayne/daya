@@ -1,24 +1,33 @@
 import React from 'react';
 import './show.css';
 import NavBarContainer from '../navbar/navbar_container' 
+import { Link } from 'react-router-dom'
+
 
 class UserShow extends React.Component {
 
     constructor(props) {
-        super(props);
-        this.state = {
-            ...this.props,
-            render: 0
-        }
-        // console.log(this.props)
-        
-        this.handleSubmit = this.handleSubmit.bind(this)
+      super(props);
+      this.state = {
+        ...this.props,
+        render: 0,
+      };
+      // console.log(this.props)
+
+      // this.handleSubmit = this.handleSubmit.bind(this)
+      this.handleFollow = this.handleFollow.bind(this)
     }
     
-    handleSubmit(){
-      console.log(this.props)
+    // handleSubmit(){
+    //   console.log(this.props)
 
-      this.props.user.follow(this.props.match.params.username);
+
+    //   this.props.user.follow(this.props.match.params.username);
+    // }
+
+    handleFollow(){
+        // debugger
+        this.props.follow(this.props.match.params.username)
     }
     
     componentDidMount () {
@@ -26,14 +35,26 @@ class UserShow extends React.Component {
         // console.log(this.state)
     }
     render () {
+        // console.log(this.state)
+        // debugger
             return (
               <div id="calendar">
                 <div id="show-edit">
                   <h1 id="nav-header">Calendar</h1>
-
+                  {/* <Link to={`${this.props.match.params.username}/follow`}> */}
                   <button id="edit-button">
-                    <div onClick={this.handleSubmit}id="button-text">Follow</div>
+                    <div
+                      onClick={() =>
+                        this.handleFollow()
+                      }
+                      id="button-text"
+                    >
+                      Follow
+                    </div>
                   </button>
+                  {/* </Link> */}
+
+                  {/* <Link></Link> */}
 
                   <button id="edit-button">
                     <div id="button-text">Edit</div>

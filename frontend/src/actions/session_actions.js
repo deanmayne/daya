@@ -8,6 +8,8 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 
+
+
 // We'll dispatch this when our user signs in
 export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
@@ -73,4 +75,10 @@ export const logout = () => dispatch => {
 export const fetchUsers = () => (dispatch) =>
   APIUtil.getUsers()
     .then((users) => dispatch(receiveUsers(users)))
+    .catch((err) => console.log(err));
+
+
+export const follow = (username) => (dispatch) => 
+    APIUtil.follow(username)
+    .then((user) => { debugger; dispatch(receiveCurrentUser(user))})
     .catch((err) => console.log(err));

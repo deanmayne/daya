@@ -126,10 +126,12 @@ router.get('/', (req, res) => {
 router.post('/:username/follow', passport.authenticate('jwt', {session: false}), (req, res) => {
 
   let currentUser = req.user
-  
-  User.findOne({username: req.params.username})
-    .then(user => currentUser.follow(user.id))
-    .then(user => res.json({follows: user.following}))
+  // debugger
+  User.findOne({ username: req.params.username })
+    .then((user) => currentUser.follow(user.id))
+    .then((user) => res.json(user))
+
+    // .then((user) => res.json({ follows: user.following }));
 
 })
 
