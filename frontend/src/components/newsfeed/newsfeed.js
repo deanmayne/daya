@@ -1,5 +1,6 @@
 import React from "react";
 import NewsfeedItem from './newsfeeditem';
+import Follow from './follow'
 
 
 class Newsfeed extends React.Component {
@@ -10,6 +11,8 @@ class Newsfeed extends React.Component {
 
   componentDidMount() {
     this.props.fetchEvents();
+    this.props.fetchUsers();
+    // debugger
   }
 
   render() {
@@ -17,13 +20,20 @@ class Newsfeed extends React.Component {
     
     // const {following} = this.props.currentUser.following;
 
-    const {events} = this.props;
+    const {events, users} = this.props;
 
     if (!this.props.currentUser) {
       return null;
     } else {
       if (this.props.currentUser.following.length === 0) {
-        return <div>You're not following anyone here are suggestions:</div>;
+        return (
+          <div>
+            <div>Suggested People to Follow:</div>
+                {users.map(user => {
+                  return <Follow user={user} key={user._id}/>
+                })}
+          </div>
+        );
       } else {
         return (
             <div>

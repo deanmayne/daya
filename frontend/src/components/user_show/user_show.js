@@ -16,7 +16,7 @@ class UserShow extends React.Component {
         this.setState({events: this.props.userEvents(this.props.user.id), render: 1})
     }
     render () {
-        debugger
+        // debugger
         if (this.state.render === 0 || !this.state.user) {
             return null;
         } else {
