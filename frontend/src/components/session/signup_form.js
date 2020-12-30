@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup.css'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class SignupForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
             this.setState({ user: nextProps.currentUser })
-            this.props.history.push('/login');
+            // this.props.history.push('/login');
         }
 
         this.setState({ errors: nextProps.errors })
@@ -40,6 +41,7 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user);
+        this.props.history.push('/newsfeed');
     }
 
     renderErrors() {
@@ -57,33 +59,36 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="signup-form">
-                        <br />
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                        />
-                        <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
-                    </div>
-                </form>
-            </div>
+          <div className="signup-form-container">
+            <form onSubmit={this.handleSubmit}>
+              <div className="signup">Sign up</div>
+              <div className="signup-form">
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                />
+                <br />
+                <button className="continue" type="submit">Continue</button>
+                {this.renderErrors()}
+              </div>
+            </form>
+          </div>
         );
     }
 };

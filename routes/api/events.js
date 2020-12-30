@@ -20,11 +20,16 @@ router.post('/',
         return res.status(400).json(errors);
       }
   
+      // console.log(req.user)
+
       const newEvent = new Event({
         title: req.body.title,
         category: req.body.category,
-        user: req.user.id
+        user_id: req.user.id,
+        username: req.body.username
       });
+
+      
   
       newEvent.save().then(event => res.json(event));
     }

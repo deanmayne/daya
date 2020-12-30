@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+#calendar {
+    margin-top: 20px;
+}
+
 #cal-container {
     display: flex;
     justify-content: space-evenly;
@@ -8,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    border: 1px black solid;
+    /* border: 1px black solid; */
     border-radius: 5px;
     width: 30%;
     height: 100vh;
@@ -22,15 +28,16 @@
 }
 
 .event {
-    border: 1px black solid;
     border-radius: 5px;
     width: 70%;
-    margin: 5px;
+    margin: 10px;
     height: 10%;
     padding: 10px;
+    color: white;
+    font-weight: 700;
 }
 
-#show-header {
+.show-header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,10 +45,11 @@
     width: 50%;
     height: 50px;
     text-align: center;
+    /* color: darkslateblue; */
 }
 
 * {
-    font-family: Lato, sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 #edit-button {
@@ -65,8 +73,39 @@
     border: none;
     outline: none;
 }
-/* 
-#button-text {
-    display: flex;
-    align-items: center;
-} */
+
+#work {
+    background-color: mediumseagreen;
+}
+#work:hover {
+    box-shadow: 2px 2px 5px gray;
+    background-color: rgb(119,221,119);
+}
+#social:hover {
+    background-color: rgb(248,222,126);
+    box-shadow: 2px 2px 5px gray;
+}
+#school:hover {
+    background-color: orchid;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#social {
+    background-color: rgb(252,194,0);
+}
+
+#school {
+    background-color: rgb(204,0,204);
+}
+
+#work-header {
+    color: mediumseagreen
+}
+
+#social-header {
+    color: rgb(252,194,0)
+}
+#school-header {
+    color:  rgb(204,0,204)
+}
+
