@@ -44,15 +44,8 @@ class EventForm extends React.Component {
 
     return (
       <form className="event-form" onSubmit={this.handleSubmit}>
-        <div className="modal__header">
+        <div className="header">
           <h2>{formType}</h2>
-          {/* <button
-            type="button"
-            className="button button--link button--icon"
-            onClick={closeModal}
-          >
-            <Icon icon="cross" className="icon icon--cross" />
-          </button> */}
         </div>
         <div className="form-field">
           <label htmlFor="event-title">Title: </label>
@@ -63,15 +56,6 @@ class EventForm extends React.Component {
             onChange={this.update("title")}
           />
         </div>
-        {/* <div className="form-field">
-          <label htmlFor="event-location">Location: </label>
-          <input
-            id="event-location"
-            type="text"
-            value={location}
-            onChange={this.update("location")}
-          />
-        </div> */}
         <div className="form-field">
           <label htmlFor="event-category">Category: </label>
           <select id="event-category" onChange={this.update("category")}>
@@ -81,25 +65,6 @@ class EventForm extends React.Component {
             <option value="school">School</option>
           </select>
         </div>
-        {/* <div className="form-field form-field--radio">
-          <label htmlFor="event-shipping">Free Shipping: </label>
-          <input
-            id="event-shipping--true"
-            type="radio"
-            value={true}
-            checked={free_shipping === "true"}
-            onChange={this.update("free_shipping")}
-          />
-          <label htmlFor="event-shipping--true">True</label>
-          <input
-            id="event-shipping--false"
-            type="radio"
-            value={false}
-            checked={free_shipping === "false"}
-            onChange={this.update("free_shipping")}
-          />
-          <label htmlFor="event-shipping--false">False</label>
-        </div> */}
 
         <button
           type="submit"
