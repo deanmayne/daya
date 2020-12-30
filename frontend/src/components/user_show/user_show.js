@@ -43,7 +43,8 @@ class UserShow extends React.Component {
               <div id="calendar">
                 <div id="show-edit">
                   <h1 id="nav-header">Calendar</h1>
-                  {/* <Link to={`${this.props.match.params.username}/follow`}> */}
+                 <div id="button-container">
+
                   <button id="edit-button">
                     <div
                       onClick={() =>
@@ -54,49 +55,36 @@ class UserShow extends React.Component {
                       Follow
                     </div>
                   </button>
-                  {/* </Link> */}
-
-                  {/* <Link></Link> */}
 
                   <button id="edit-button">
-                    <div id="button-text">Edit</div>
+                    <div id="button-text">Add Event</div>
                   </button>
+                 </div>
                 </div>
                 <div id="cal-container">
                         <div className="column" > <h2 className="show-header" id="work-header">Work</h2>
-                            {this.props.events.map((event) => <EventIndexItem event={event} />)}
+                            {Object.values(this.props.events).map((event) => {
+                            if (event.category === "work") return <EventIndexItem event={event} />})
+                            }
+    
                         </div>
                   <div className="column">
-                    {" "}
-                    <h2 className="show-header" id="social-header">
-                      Social
-                    </h2>
-                    <div className="event" id="social">
-                      Event 1
-                    </div>
-                    <div className="event" id="social">
-                      Event 2
-                    </div>
-                    <div className="event" id="social">
-                      Event 3
-                    </div>
+                            <div className="column" > <h2 className="show-header" id="social-header">Social</h2>
+                                {Object.values(this.props.events).map((event) => {
+                                    if (event.category === "social") return <EventIndexItem event={event} />
+                                })
+                                }
+
+                            </div>
                   </div>
-                  <div className="column">
-                    {" "}
-                    <h2 className="show-header" id="school-header">
-                      School
-                    </h2>
-                    <div className="event" id="school">
-                      Event 1
+                        <div className="column" > <h2 className="show-header" id="school-header">School</h2>
+                            {Object.values(this.props.events).map((event) => {
+                                if (event.category === "school") return <EventIndexItem event={event} />
+                            })
+                            }
+
+                        </div>
                     </div>
-                    <div className="event" id="school">
-                      Event 2
-                    </div>
-                    <div className="event" id="school">
-                      Event 3
-                    </div>
-                  </div>
-                </div>
               </div>
             );
         }
