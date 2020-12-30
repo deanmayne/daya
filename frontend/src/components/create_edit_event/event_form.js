@@ -2,18 +2,13 @@ import React from "react";
 import { withRouter } from "react-router";
 import Icon from "../icons/icon";
 
-class ProductForm extends React.Component {
+class EventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "",
-      description: "",
-      price: "",
       category: "",
-      location: "",
-      free_shipping: "false",
-      img_url: "",
-      owner_id: this.props.session,
+      username: this.props.currentUser,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,44 +16,34 @@ class ProductForm extends React.Component {
 
   update(property) {
     return (e) => {
-      if (property === "name") {
-        this.setState({
-          [property]: e.currentTarget.value,
-          ["img_url"]:
-            "https://source.unsplash.com/400x400/?" +
-            e.currentTarget.value.split(" ").join(","),
-        });
-      } else {
         this.setState({
           [property]: e.target.value,
         });
-      }
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.formType !== "Create A Product !") {
+    if (this.props.formType !== "Create An Event !") {
       this.setState({
         ["id"]: this.props.history.location.pathname.match(/\d+/)[0],
       });
     }
 
-    const product = Object.assign({}, this.state);
-    this.props.processForm(product).then((product) => {
-      this.props.closeModal();
-      if (this.props.formType === "Create A Product !") {
-        this.props.history.push(`/product/${product.product.id}`);
+    const event = Object.assign({}, this.state);
+    this.props.processForm(event).then((event) => {
+      if (this.props.formType === "Create An Event !") {
+        this.props.history.push(`/event/${event.event.id}`);
       }
     });
   }
 
   render() {
-    const { description, name, price, location, free_shipping } = this.state;
-    const { closeModal, formType } = this.props;
+    const { title, category, username } = this.state;
+
 
     return (
-      <form className="product-form" onSubmit={this.handleSubmit}>
+      <form className="event-form" onSubmit={this.handleSubmit}>
         <div className="modal__header">
           <h2>{formType}</h2>
           <button
@@ -70,35 +55,26 @@ class ProductForm extends React.Component {
           </button>
         </div>
         <div className="form-field">
-          <label htmlFor="product-name">Name: </label>
-          <input
-            id="product-name"
-            type="text"
-            value={name}
-            onChange={this.update("name")}
+          <label htmlFor="event-title">Description: </label>
+          <textarea
+            cols="30"
+            rows="10"
+            value={title}
+            onChange={this.update("title")}
           />
         </div>
         <div className="form-field">
-          <label htmlFor="product-price">Price:</label>
+          <label htmlFor="event-location">Location: </label>
           <input
-            id="product-price"
-            type="text"
-            value={price}
-            onChange={this.update("price")}
-          />
-        </div>
-        <div className="form-field">
-          <label htmlFor="product-location">Location: </label>
-          <input
-            id="product-location"
+            id="event-location"
             type="text"
             value={location}
             onChange={this.update("location")}
           />
         </div>
         <div className="form-field">
-          <label htmlFor="product-category">Category: </label>
-          <select id="product-category" onChange={this.update("category")}>
+          <label htmlFor="event-category">Category: </label>
+          <select id="event-category" onChange={this.update("category")}>
             <option selected disabled></option>
             <option value="jewelry-accessories">Jewelry & Accessories</option>
             <option value="clothing-shoes">Clothing & Shoes</option>
@@ -111,45 +87,34 @@ class ProductForm extends React.Component {
           </select>
         </div>
         <div className="form-field form-field--radio">
-          <label htmlFor="product-shipping">Free Shipping: </label>
+          <label htmlFor="event-shipping">Free Shipping: </label>
           <input
-            id="product-shipping--true"
+            id="event-shipping--true"
             type="radio"
             value={true}
             checked={free_shipping === "true"}
             onChange={this.update("free_shipping")}
           />
-          <label htmlFor="product-shipping--true">True</label>
+          <label htmlFor="event-shipping--true">True</label>
           <input
-            id="product-shipping--false"
+            id="event-shipping--false"
             type="radio"
             value={false}
             checked={free_shipping === "false"}
             onChange={this.update("free_shipping")}
           />
-          <label htmlFor="product-shipping--false">False</label>
-        </div>
-        <div className="form-field">
-          <label htmlFor="product-description">Description: </label>
-          <textarea
-            cols="30"
-            rows="10"
-            value={description}
-            onChange={this.update("description")}
-          />
+          <label htmlFor="event-shipping--false">False</label>
         </div>
 
         <button
           type="submit"
           className="button button--primary button--block button--lg"
         >
-          {formType === "Create A Product !"
-            ? "Create Product"
-            : "Edit Product"}
+          {formType === "Create An Event !" ? "Create Product" : "Edit Product"}
         </button>
       </form>
     );
   }
 }
 
-export default withRouter(ProductForm);
+export default withRouter(EventForm);
