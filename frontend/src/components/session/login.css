@@ -5,7 +5,7 @@
     /* background-color: rgb(106, 79, 235); */
     border: none;
     outline: none;
-    background-color: darkslateblue;
+    background-color: slateblue;
     color: white;
     border-radius: 8px;
 }
@@ -17,7 +17,7 @@
 
 
 .login {
-    color:darkslateblue;
+    color:slateblue;
     font-family: "Lato", sans-serif;
     font-size: 40px;
     font-weight: 500;
@@ -41,7 +41,7 @@
 
 .input {
     border-radius: 8px;
-    border: 1px darkslateblue solid;
+    border: 1px slateblue solid;
 }
 
 .login-form > input, button {

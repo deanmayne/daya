@@ -45,7 +45,7 @@
     width: 50%;
     height: 50px;
     text-align: center;
-    /* color: darkslateblue; */
+    /* color: slateblue; */
 }
 
 * {
@@ -58,7 +58,7 @@
     border-radius: 8px;
     color: white;
     font-weight: 700px;
-    background-color:darkslateblue;
+    background-color:slateblue;
     height: 34px;
     width: 100px;
     /* vertical-align: middle; */
