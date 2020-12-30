@@ -14,7 +14,8 @@ const EventsReducer = (state = {}, action) => {
       // debugger
       return newState;
     case RECEIVE_USER_EVENTS:
-      newState.user = action.events.data;
+      // newState.user = action.events.data;
+      newState = Object.assign({}, newState, action.events.data);
       return newState;
     // case RECEIVE_NEW_EVENT:
     //   newState.new = action.event.data;

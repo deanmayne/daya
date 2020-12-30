@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return({
-        userEvents: userId => dispatch(fetchUserEvents(userId))
+        userEvents: username => dispatch(fetchUserEvents(username))
     })
 }
 
