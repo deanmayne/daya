@@ -10,6 +10,7 @@ class UserShow extends React.Component {
             ...this.props,
             render: 0
         }
+        console.log(this.props, this.state)
     }
 
     componentDidMount () {
@@ -17,10 +18,10 @@ class UserShow extends React.Component {
     }
     render () {
             return (
-                <div>
+                <div id="calendar">
                     <div id="show-edit">
     
-                        <h1 id="nav-header">User Show</h1>
+                        <h1 id="nav-header">Calendar</h1>
                         <button id="edit-button"> 
                         <div id="button-text">
                             Edit
@@ -28,20 +29,20 @@ class UserShow extends React.Component {
                          </button>
                     </div>
                     <div id="cal-container">
-                        <div className="column"> <h2 id="show-header">Work</h2>
-                            <div className="event">Event 1</div>
-                            <div className="event">Event 2</div>
-                            <div className="event">Event 3</div>
+                        <div className="column" > <h2 className="show-header" id="work-header">Work</h2>
+                            <div className="event" id="work">Event 1</div>
+                            <div className="event" id="work">Event 2</div>
+                            <div className="event" id="work">Event 3</div>
                         </div>
-                        <div className="column"> <h2 id="show-header" >Social</h2>
-                            <div className="event" >Event 1</div>
-                            <div className="event">Event 2</div>
-                            <div className="event">Event 3</div>                
+                        <div className="column" > <h2 className="show-header" id="social-header">Social</h2>
+                            <div className="event" id="social" >Event 1</div>
+                            <div className="event" id="social">Event 2</div>
+                            <div className="event" id="social">Event 3</div>                
                         </div>
-                        <div className="column"> <h2 id="show-header">School</h2>
-                            <div className="event">Event 1</div>
-                            <div className="event">Event 2</div>
-                            <div className="event">Event 3</div>
+                        <div className="column" > <h2 className="show-header" id="school-header">School</h2>
+                            <div className="event" id="school">Event 1</div>
+                            <div className="event" id="school">Event 2</div>
+                            <div className="event" id="school">Event 3</div>
                         </div>
                     </div>
                 </div>

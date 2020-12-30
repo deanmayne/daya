@@ -68,16 +68,20 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-container">
-                <form onSubmit={this.handleSubmit}>
+                <div className="li-img-container">
+
+                    <img id="login1" alt="pic" src="login2.jpg"/>
+                </div>
+                <form className="login-signup"onSubmit={this.handleSubmit}>
                     <div className="login">Log in</div>
                     <div className="login-form">
-                        <input type="text"
+                        <input className="input" type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
                         />
                         <br />
-                        <input type="password"
+                        <input className="input" type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
@@ -88,6 +92,10 @@ class LoginForm extends React.Component {
                         {this.renderErrors()}
                     </div>
                 </form>
+                <div className="li-img-container" id="container2">
+
+                    <img id="login2" alt="pic" src="login3.jpg" />
+                </div>
             </div>
         );
     }
