@@ -9,10 +9,10 @@ class EventIndexItem extends React.Component {
 
     const {title, category, date} = this.props.event;
     return (
-      <div className="event-card">
-          <div className="event-card__title">{title}</div>
-          <div className="event-card__category">{category}</div>
-          <div className="event-card__date">{date}</div>
+      <div className="event" id={category}>
+          <div className="event-card">{title}</div>
+          <div className="event-card">{date}</div>
+          <div className="event-card">{category}</div>
       </div>
     );
   }

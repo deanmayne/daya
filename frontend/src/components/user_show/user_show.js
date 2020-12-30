@@ -1,6 +1,7 @@
 import React from 'react';
 import './show.css';
-import NavBarContainer from '../navbar/navbar_container' 
+// import NavBarContainer from '../navbar/navbar_container' 
+import EventIndexItem from '../events/event_index_item'
 
 class UserShow extends React.Component {
 
@@ -10,7 +11,7 @@ class UserShow extends React.Component {
             ...this.props,
             render: 0
         }
-        console.log(this.props, this.state)
+        console.log("props", this.props, "state", this.state)
     }
 
     componentDidMount () {
@@ -24,15 +25,13 @@ class UserShow extends React.Component {
                         <h1 id="nav-header">Calendar</h1>
                         <button id="edit-button"> 
                         <div id="button-text">
-                            Edit
+                            Add Event
                         </div>
                          </button>
                     </div>
                     <div id="cal-container">
                         <div className="column" > <h2 className="show-header" id="work-header">Work</h2>
-                            <div className="event" id="work">Event 1</div>
-                            <div className="event" id="work">Event 2</div>
-                            <div className="event" id="work">Event 3</div>
+                           {this.props.events.map ((event) => <EventIndexItem event={event}/>)} 
                         </div>
                         <div className="column" > <h2 className="show-header" id="social-header">Social</h2>
                             <div className="event" id="social" >Event 1</div>
