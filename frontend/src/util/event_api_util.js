@@ -4,9 +4,8 @@ export const getEvents = () => {
   return axios.get("/api/events/");
 };
 
-
-export const getUserEvents = (user_id) => {
-  return axios.get(`/api/events/user/${user_id}`);
+export const getUserEvents = (username) => {
+  return axios.get(`/api/events/${username}`);
 };
 
 export const getEvent = (event_id) => {

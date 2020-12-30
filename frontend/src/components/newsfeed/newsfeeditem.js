@@ -12,9 +12,13 @@ class NewsfeedItem extends React.Component {
     //   const {event} = this.props.event;
         return (
           <div>
-            {this.props.event.title}
-            {this.props.event.category}
-            {this.props.event.username}
+            <br />
+
+            <div>Title: {this.props.event.title}</div>
+            <div>Category: {this.props.event.category}</div>
+            <div>User: {this.props.event.username}</div>
+
+            <br />
           </div>
         );
     }

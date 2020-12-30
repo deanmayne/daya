@@ -66,8 +66,8 @@ router.post('/',
 
 
 // A Single Users Events (upcoming events page) 
-  router.get('/user/:user_id', (req, res) => {
-    Event.find({user: req.params.user_id})
+  router.get('/:username', (req, res) => {
+    Event.find({username: req.params.username})
         .sort({ date: -1})
         .then(events => res.json(events))
         .catch(err =>
