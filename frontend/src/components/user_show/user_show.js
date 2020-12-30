@@ -17,7 +17,7 @@ class UserShow extends React.Component {
     }
     render () {
         debugger
-        if (!this.props.event) {
+        if (!this.props.events) {
             return (
                 <div>
                     {/* <NavBarContainer loggedIn={true}/>  */}

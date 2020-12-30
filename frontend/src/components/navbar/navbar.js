@@ -19,7 +19,7 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                <div>
+                <div id="nav-container">
                     {/* <Link to={'/tweets'}>All Tweets</Link>
                     <Link to={'/new_tweet'}>Write a Tweet</Link> */}
                     {/* <Link to={`/calendar/${this.state.user.id}`}>My Calendar</Link> */}
