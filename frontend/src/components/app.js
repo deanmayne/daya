@@ -22,7 +22,8 @@ const App = () => (
             {/* <Redirect from="/home" to="/" /> */}
             <Route exact path="/calendar/:username" component={UserShowContainer}/>
             <Route exact path="/" component={SplashPage} />
-            <Route exact path ='/dean' component = {EditFormContainer}/>
+            {/* <Route exact path ='/editEvent' component = {EditFormContainer}/> */}
+            {/* <Route exact path ='/createEvent' component = {CreateFormContainer}/> */}
         </Switch>
     </div>
 );
