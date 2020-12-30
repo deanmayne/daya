@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "A social calendar feed.",
   "main": "app.js",
+  "author": "",
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
-    "debug": "node --inspect app.js",
+    "server:debug": "nodemon --inspect app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
