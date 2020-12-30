@@ -17,11 +17,9 @@ class Newsfeed extends React.Component {
   render() {
 
     const { events, users, currentUser } = this.props;
-    debugger
     if (!this.loaded || currentUser === {}) {
       return null;
     } else {
-        debugger
       if (currentUser.following.length === 0) {
         return (
           <div>

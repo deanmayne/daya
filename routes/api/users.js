@@ -84,7 +84,7 @@ router.post('/login', (req, res) => {
       // return res.status(400).json('user doesnt exist')
     }
     
-    // debugger; 
+    ; 
     bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if(isMatch) {
@@ -92,7 +92,7 @@ router.post('/login', (req, res) => {
                         // const payload = {id: user.id, username: user.username};
 
                         // const payload = user
-                        // debugger
+                        
                         jwt.sign(
                             payload, 
                             keys.secretOrKey, 
