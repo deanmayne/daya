@@ -55,7 +55,7 @@ class EventForm extends React.Component {
           </button> */}
         </div>
         <div className="form-field">
-          <label htmlFor="event-title">Description: </label>
+          <label htmlFor="event-title">Title: </label>
           <textarea
             cols="30"
             rows="10"
@@ -105,7 +105,7 @@ class EventForm extends React.Component {
           type="submit"
           className="button button--primary button--block button--lg"
         >
-          {formType === "Create An Event !" ? "Create Product" : "Edit Product"}
+          {formType === "Create An Event !" ? "Create Event" : "Edit Event"}
         </button>
       </form>
     );
