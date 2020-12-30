@@ -13,7 +13,7 @@
 #nav-container {
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 2px 4px -2px gray
+    box-shadow: 0 2px 4px -2px gray;
 }
 
 #splash-description {
