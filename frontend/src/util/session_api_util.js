@@ -19,3 +19,8 @@ export const login = (userData) => {
 export const getUsers = () => {
   return axios.get("/api/users/");
 };
+
+export const follow = (username) => {
+    // debugger
+    return axios.post(`/${username}/follow`);
+}
