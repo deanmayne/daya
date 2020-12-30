@@ -16,15 +16,6 @@ class UserShow extends React.Component {
         this.setState({events: this.props.userEvents(this.props.user.id), render: 1})
     }
     render () {
-        debugger
-        if (!this.props.events) {
-            return (
-                <div>
-                    {/* <NavBarContainer loggedIn={true}/>  */}
-                    <h1> make events </h1>
-                </div>
-            );
-        } else {
             return (
                 <div>
                     <div id="show-edit">
@@ -57,7 +48,7 @@ class UserShow extends React.Component {
             );
         }
     }
-}
+// }
 
 
 export default UserShow;
