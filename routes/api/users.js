@@ -84,7 +84,7 @@ router.post('/login', (req, res) => {
       // return res.status(400).json('user doesnt exist')
     }
     
-    // debugger; 
+    ; 
     bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if(isMatch) {
@@ -92,7 +92,7 @@ router.post('/login', (req, res) => {
                         // const payload = {id: user.id, username: user.username};
 
                         // const payload = user
-                        // debugger
+                        
                         jwt.sign(
                             payload, 
                             keys.secretOrKey, 
@@ -126,10 +126,12 @@ router.get('/', (req, res) => {
 router.post('/:username/follow', passport.authenticate('jwt', {session: false}), (req, res) => {
 
   let currentUser = req.user
-  
-  User.findOne({username: req.params.username})
-    .then(user => currentUser.follow(user.id))
-    .then(user => res.json({follows: user.following}))
+  // debugger
+  User.findOne({ username: req.params.username })
+    .then((user) => currentUser.follow(user.id))
+    .then((user) => res.json(user))
+
+    // .then((user) => res.json({ follows: user.following }));
 
 })
 

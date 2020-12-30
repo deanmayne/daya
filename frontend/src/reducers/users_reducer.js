@@ -9,7 +9,7 @@ export default function(state = {}, action) {
     switch (action.type) {
         case RECEIVE_ALL_USERS: 
          newState = Object.assign({}, newState, action.users.data)
-      // debugger
+      
       return newState;
         default:
             return state;

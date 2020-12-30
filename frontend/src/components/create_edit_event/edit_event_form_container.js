@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { updateEvent } from "../../actions/event_actions";
+import { updateAnEvent } from "../../actions/event_actions";
 import EventForm from "./event_form";
 // import { removeErrors } from "../../actions/session_actions";
 
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  processForm: (event) => dispatch(createEvent(event)),
+  processForm: (event) => dispatch(updateAnEvent(event)),
 });
 
 export default withRouter(
