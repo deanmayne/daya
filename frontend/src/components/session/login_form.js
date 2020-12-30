@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
             username: this.state.username,
             password: this.state.password
         };
-        debugger
+        // debugger
         this.props.login(user);
         this.props.history.push('/newsfeed');
     }

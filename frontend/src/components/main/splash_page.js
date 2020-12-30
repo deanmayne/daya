@@ -1,7 +1,7 @@
 import React from 'react';
 import EventIndexContainer from '../events/events_index_container';
 import NavBar from '../navbar/navbar_container'
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
 
 class SplashPage extends React.Component {
 

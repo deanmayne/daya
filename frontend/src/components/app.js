@@ -7,6 +7,7 @@ import SplashPage from './main/splash_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import UserShowContainer from './user_show/user_show_container'
+import Newsfeed from './newsfeed/newsfeed_container'
 
 const App = () => (
     <div>
@@ -14,6 +15,8 @@ const App = () => (
         <Switch>
             <Route exact path="/login" component={LoginFormContainer} />
             <Route exact path="/signup" component={SignupFormContainer} />
+            <Route exact path="/newsfeed" component={Newsfeed} />
+
             {/* <Redirect from="/home" to="/" /> */}
             <Route exact path="/calendar/:username" component={UserShowContainer}/>
             <Route exact path="/" component={SplashPage} />

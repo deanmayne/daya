@@ -45,7 +45,10 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, username: user.username };
+            const payload = {id: user.id, username: user.username, following: user.following};
+            // const payload = {id: user.id, username: user.username};
+
+            
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
@@ -85,8 +88,11 @@ router.post('/login', (req, res) => {
     bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if(isMatch) {
-                        const payload = {id: user.id, username: user.username};
+                        const payload = {id: user.id, username: user.username, following: user.following};
+                        // const payload = {id: user.id, username: user.username};
 
+                        // const payload = user
+                        // debugger
                         jwt.sign(
                             payload, 
                             keys.secretOrKey, 
