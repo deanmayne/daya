@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import Icon from "../icons/icon";
+// import Icon from "../icons/icon";
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -39,20 +39,20 @@ class EventForm extends React.Component {
   }
 
   render() {
-    const { title, category, username } = this.state;
-
+    const { title, category, username} = this.state;
+    const {formType} = this.props;
 
     return (
       <form className="event-form" onSubmit={this.handleSubmit}>
         <div className="modal__header">
           <h2>{formType}</h2>
-          <button
+          {/* <button
             type="button"
             className="button button--link button--icon"
             onClick={closeModal}
           >
             <Icon icon="cross" className="icon icon--cross" />
-          </button>
+          </button> */}
         </div>
         <div className="form-field">
           <label htmlFor="event-title">Description: </label>
@@ -63,7 +63,7 @@ class EventForm extends React.Component {
             onChange={this.update("title")}
           />
         </div>
-        <div className="form-field">
+        {/* <div className="form-field">
           <label htmlFor="event-location">Location: </label>
           <input
             id="event-location"
@@ -71,22 +71,17 @@ class EventForm extends React.Component {
             value={location}
             onChange={this.update("location")}
           />
-        </div>
+        </div> */}
         <div className="form-field">
           <label htmlFor="event-category">Category: </label>
           <select id="event-category" onChange={this.update("category")}>
             <option selected disabled></option>
-            <option value="jewelry-accessories">Jewelry & Accessories</option>
-            <option value="clothing-shoes">Clothing & Shoes</option>
-            <option value="home-living">Home & Living</option>
-            <option value="wedding-party">Wedding & Party</option>
-            <option value="toys-entertainment">Toys & Entertainment</option>
-            <option value="arts-collectibles">Arts & Collectibles</option>
-            <option value="craft-supplies">Craft Supplies</option>
-            <option value="gifts-gift-cards">Gifts & Gift Cards</option>
+            <option value="work">Work</option>
+            <option value="social">Social</option>
+            <option value="school">School</option>
           </select>
         </div>
-        <div className="form-field form-field--radio">
+        {/* <div className="form-field form-field--radio">
           <label htmlFor="event-shipping">Free Shipping: </label>
           <input
             id="event-shipping--true"
@@ -104,7 +99,7 @@ class EventForm extends React.Component {
             onChange={this.update("free_shipping")}
           />
           <label htmlFor="event-shipping--false">False</label>
-        </div>
+        </div> */}
 
         <button
           type="submit"
