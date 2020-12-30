@@ -16,7 +16,9 @@ class UserShow extends React.Component {
     }
     
     handleSubmit(){
-        this.props.user.follow(this.props.match.params.username)
+      console.log(this.props)
+
+      this.props.user.follow(this.props.match.params.username);
     }
     
     componentDidMount () {
@@ -30,7 +32,7 @@ class UserShow extends React.Component {
                   <h1 id="nav-header">Calendar</h1>
 
                   <button id="edit-button">
-                    <div onClick={() => this.handleSubmit}id="button-text">Follow</div>
+                    <div onClick={this.handleSubmit}id="button-text">Follow</div>
                   </button>
 
                   <button id="edit-button">
