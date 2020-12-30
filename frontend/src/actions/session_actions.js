@@ -80,5 +80,10 @@ export const fetchUsers = () => (dispatch) =>
 
 export const follow = (username) => (dispatch) => 
     APIUtil.follow(username)
-    .then((user) => { debugger; dispatch(receiveCurrentUser(user))})
-    .catch((err) => console.log(err));
+    .then((user) => dispatch(receiveCurrentUser(user.data)))
+    .catch((err) => console.log(err))
+
+export const unfollow = (username) => (dispatch) =>
+  APIUtil.unfollow(username)
+    .then((user) => dispatch(receiveCurrentUser(user.data)))
+    .catch((err) => console.log(err))
