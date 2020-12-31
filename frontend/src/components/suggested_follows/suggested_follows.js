@@ -1,10 +1,19 @@
 import React from 'react';
+import Follow from '../newsfeed/follow'
 
 class SuggestedFollows extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <div>
-                <h1>Suggested Follows</h1>
+                <h1>Suggested People to Follow</h1>
+                <div>
+                    {this.props.users.map((user) => {
+                        return <Follow user={user} key={user._id} />;
+                    })}
+                </div>
             </div>
         )
     }

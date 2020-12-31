@@ -1,6 +1,6 @@
 import React from "react";
 import EventIndexItem from '../events/event_index_item'
-import Follow from "./follow";
+import SuggestedFollows from "../suggested_follows/suggested_follows_container";
 
 class Newsfeed extends React.Component {
   constructor(props) {
@@ -22,16 +22,9 @@ class Newsfeed extends React.Component {
     } else {
       if (currentUser.following.length === 0) {
         return (
-          <div>
-            <div>Suggested People to Follow:</div>
-            {users.map((user) => {
-              return <Follow user={user} key={user._id} />;
-            })}
-          </div>
+          <SuggestedFollows />
         );
       } else {
-        // console.log(this.props)
-        // debugger
           return (
             <div>
               <div id="newsfeed-container"> 
