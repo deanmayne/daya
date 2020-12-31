@@ -11,6 +11,7 @@ import Newsfeed from './newsfeed/newsfeed_container';
 import CreateFormContainer from './create_edit_event/create_event_form_container';
 import EditFormContainer from './create_edit_event/edit_event_form_container';
 import Follows from './suggested_follows/suggested_follows_container' 
+import FollowersContainer from './followers/followers_container';
 
 const App = () => (
     <div>
@@ -24,6 +25,8 @@ const App = () => (
             <Route exact path="/" component={SplashPage} />
             {/* <Route exact path ='/editEvent' component = {EditFormContainer}/> */}
             {/* <Route exact path ='/createEvent' component = {CreateFormContainer}/> */}
+            <Route exact path ='/dean' component = {FollowersContainer}/>
+            <Redirect to='/newsfeed' />
         </Switch>
     </div>
 );

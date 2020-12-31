@@ -1,6 +1,9 @@
 import React from "react";
 import EventIndexItem from '../events/event_index_item'
 import SuggestedFollows from "../suggested_follows/suggested_follows_container";
+import FollowersIndex from "../followers/followers_container";
+import Follow from './follow';
+
 
 class Newsfeed extends React.Component {
   constructor(props) {
@@ -33,6 +36,7 @@ class Newsfeed extends React.Component {
               <br />
               <div> 
                 <h2>Upcoming Events </h2>
+                <FollowersIndex/>
 
                 {events.map((event) => {
                   if (currentUser.following.includes(event.user_id)) {
