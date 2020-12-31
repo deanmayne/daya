@@ -42,8 +42,7 @@ class Newsfeed extends React.Component {
                     }
                   })}
               </div>
-                <div id="newsfeed-following"> 
-                  
+                <div id="newsfeed-following">  
                   <FollowersIndex />
                 </div>
               </div>

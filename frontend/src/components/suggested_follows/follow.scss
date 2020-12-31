@@ -3,7 +3,7 @@
     border-radius: 8px; 
     padding: 10px;
     width: 90%;
-    height: 10%;
+    height: 95px;
     margin: 10px;
     background: rgb(63,94,251);
     // background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -16,22 +16,25 @@
 #color-1 {
     background-color: rgb(135, 116, 241)
 }
+
+#color-1:hover {
+    background-color: darkslateblue;
+    box-shadow: 2px 2px 5px gray;
+}
+#color-2:hover {
+    background-color: darkslateblue;
+    box-shadow: 2px 2px 5px gray;
+}
+#color-3:hover {
+    background-color: darkslateblue;
+    box-shadow: 2px 2px 5px gray;
+}
 #color-2 {
     background-color: slateblue
 }
 #color-3 {
     background-color:rgb(94, 82, 170);
 }
-// #color-1 {
-//     background-color: rgba(104,53,246,1)
-// }
-// #color-2 {
-//     background-color: rgba(162,60,192,1);
-// }
-// #color-3 {
-//     background-color: rgb(252,70,107);
-// }
-
 #user-link {
     color: white;
 }
