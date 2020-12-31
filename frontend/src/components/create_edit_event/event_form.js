@@ -8,6 +8,7 @@ class EventForm extends React.Component {
     this.state = {
       title: "",
       category: "",
+      date: "",
       username: this.props.currentUser,
     };
 
@@ -65,6 +66,15 @@ class EventForm extends React.Component {
             <option value="social">Social</option>
             <option value="school">School</option>
           </select>
+        </div>
+        <div className="form-field">
+          <label htmlFor="event-date">Event Date:</label>
+          <input
+            type="date"
+            id="event-date"
+            
+            onChange={this.update("date")}
+          />
         </div>
 
         <button
