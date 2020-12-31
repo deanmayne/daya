@@ -8,7 +8,7 @@ class SuggestedFollows extends React.Component {
     render() {
         return (
             <div>
-                <h1>Suggested People to Follow</h1>
+                <h1 id="nav-header">Suggested People to Follow</h1>
                 <div>
                     {this.props.users.map((user) => {
                         return <Follow user={user} key={user._id} />;
