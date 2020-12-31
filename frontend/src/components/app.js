@@ -17,7 +17,7 @@ const App = () => (
         <Switch>
             <Route exact path="/login" component={LoginFormContainer} />
             <Route exact path="/signup" component={SignupFormContainer} />
-            <Route exact path="/newsfeed" component={Newsfeed} />
+            <ProtectedRoute exact path="/newsfeed" component={Newsfeed} />
 
             {/* <Redirect from="/home" to="/" /> */}
             <Route exact path="/calendar/:username" component={UserShowContainer}/>

@@ -22,5 +22,10 @@ export const getUsers = () => {
 
 export const follow = (username) => {
     // debugger
-    return axios.post(`/${username}/follow`);
+    return axios.post(`/api/users/${username}/follow`);
 }
+
+export const unfollow = (username) => {
+  // debugger
+  return axios.delete(`/api/users/${username}/unfollow`);
+};

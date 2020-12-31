@@ -6,7 +6,7 @@ class EventIndexItem extends React.Component {
     }
 
   render() {
-
+    
     const {title, category, date} = this.props.event;
     return (
       <div className="event" id={category}>

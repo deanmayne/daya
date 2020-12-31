@@ -17,7 +17,7 @@ class Newsfeed extends React.Component {
   render() {
 
     const { events, users, currentUser } = this.props;
-    if (!this.loaded || currentUser === {}) {
+    if (!this.loaded || currentUser.following === undefined ) {
       return null;
     } else {
       if (currentUser.following.length === 0) {
@@ -30,20 +30,23 @@ class Newsfeed extends React.Component {
           </div>
         );
       } else {
-        if (currentUser.following.length === 0) {
-          return <div>You're not following anyone here are suggestions:</div>;
-        } else {
+        // console.log(this.props)
+        // debugger
           return (
             <div>
-              <div>your followers stuff </div>
+              <div>{this.props.currentUser.username}'s newsfeed</div>
+              <div>Following {this.props.currentUser.following.length} People</div>
+              <br />
+              <div>Upcoming Events </div>
               {events.map((event) => {
-                if (currentUser.following.includes(event.user)) {
+                // debugger
+                if (currentUser.following.includes(event.user_id)) {
+                  // debugger;
                   return <NewsfeedItem key={event._id} event={event} />;
                 }
               })}
             </div>
           );
-        }
       }
     }
   }
