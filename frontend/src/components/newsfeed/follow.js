@@ -9,18 +9,18 @@ class Follow extends React.Component {
         this.state = {  }
     }
 
-    pickColor() {
-      if (this.props.color % 3 === 0) {
-        return 'color-3'
-      } else if (this.props.color % 3 === 1) {
-        return "color-1"
-      } else { 
-        return "color-2"
-      }
-    }
     render() { 
+      const pickColor = () => {
+        if (this.props.color % 3 === 0) {
+          return 'color-3'
+        } else if (this.props.color % 3 === 1) {
+          return "color-1"
+        } else { 
+          return "color-2"
+        }
+      }
         return (
-          <div className="follow-card" id={this.pickcolor}>
+          <div className="follow-card" id={pickColor()}>
             <div>
               <h3>Username: <Link id="user-link" to={`/calendar/${this.props.user.username}`}>{this.props.user.username}</Link></h3> 
             </div>

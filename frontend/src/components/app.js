@@ -21,13 +21,13 @@ const App = () => (
             <Route exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/newsfeed" component={Newsfeed} />
             <Route exact path="/calendar/:username" component={UserShowContainer} />
-            <ProtectedRoute exact path="/suggestedfollows" component={Follows} />
             <Route exact path='/editEvent/:id' component={EditFormContainer} />
             <ProtectedRoute
                 exact
                 path="/createEvent"
                 component={CreateFormContainer}
             />
+            <ProtectedRoute exact path="/suggestedfollows" component={Follows} />
             <Route exact path="/" component={SplashPage} />
             <Redirect to="/newsfeed" />
         </Switch>

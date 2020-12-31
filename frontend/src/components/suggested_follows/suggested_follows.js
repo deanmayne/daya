@@ -6,24 +6,25 @@ class SuggestedFollows extends React.Component {
         super(props);
         // this.state = { color: 0 }
     }
-
-    followItem () {
-        let color = 0;
-        this.props.users.map((user) => {
-            if (!this.props.followers.includes(user._id)) {
-                // this.setState({ color: this.state.color + 1 })
-                color += 1;
-                return (<Follow user={user} color={color} key={user._id} />)
-            };
-        }) 
-    }
     
     render() {
+        
+        const followItem = () => {
+            let color = 0;
+            return this.props.users.map((user) => {
+                if (!this.props.followers.includes(user._id)) {
+                    // this.setState({ color: this.state.color + 1 })
+                    color += 1;
+                    return (<Follow user={user} color={color} key={user._id} />)
+                };
+            }) 
+        }
+        
         return (
             <div>
                 <h1 id="nav-header">Suggested People to Follow</h1>
                 <div>
-                    {this.folowItem}
+                    {followItem()}
                 </div>
             </div>
         );
