@@ -33,7 +33,8 @@ class EventForm extends React.Component {
     const event = Object.assign({}, this.state);
     this.props.processForm(event).then((event) => {
       if (this.props.formType === "Create An Event !") {
-        this.props.history.push(`/event/${event.event.id}`);
+        // this.props.history.push(`/event/${event.event.id}`);
+        this.props.history.push(`calendar/${this.props.currentUser}/`)
       }
     });
   }

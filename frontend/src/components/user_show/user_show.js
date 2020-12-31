@@ -3,6 +3,9 @@ import './show.css';
 import EventIndexItem from '../events/event_index_item'
 import NavBarContainer from '../navbar/navbar_container'
 import { Link } from 'react-router-dom'
+import Buttons from './buttons';
+
+
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
@@ -10,42 +13,21 @@ class UserShow extends React.Component {
       ...this.props,
       render: 0,
     };
-
-    this.handleFollow = this.handleFollow.bind(this);
   }
 
-  handleFollow() {
-    this.props.follow(this.props.match.params.username);
+  componentDidMount(){
+    this.props.fetchEvents()
   }
-  handleUnfollow() {
-    this.props.unfollow(this.props.match.params.username);
-  }
-
 
   render() {
+    console.log(this.props)
     return (
       <div id="calendar">
         <div id="show-edit">
           <h1 id="nav-header">Calendar</h1>
-          {/* <Link to={`${this.props.match.params.username}/follow`}> */}
-          <div id="button-container">
-
-            <button id="edit-button">
-              <div onClick={() => this.handleFollow()} id="button-text">
-                Follow
-              </div>
-            </button>
-            <button id="edit-button">
-              <div onClick={() => this.handleUnfollow()} id="button-text">
-                Unfollow
-              </div>
-            </button>
-            {/* </Link> */}
-            {/* <Link></Link> */}
-            <button id="edit-button">
-              <div id="button-text">Add Event</div>
-            </button>
-          </div>
+          <Buttons user={this.props.user} params={this.props.match.params} 
+          follow={this.props.follow} unfollow={this.props.unfollow} 
+          history={this.props.history}/>
         </div>
         <div id="cal-container">
           <div className="column">

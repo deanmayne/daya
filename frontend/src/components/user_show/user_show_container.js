@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchUserEvents} from '../../actions/event_actions';
+import {fetchEvents} from '../../actions/event_actions';
 import UserShow from './user_show';
 import { follow, unfollow } from "../../actions/session_actions";
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-      userEvents: (username) => dispatch(fetchUserEvents(username)),
+      fetchEvents: () => dispatch(fetchEvents()),
       follow: (username) => dispatch(follow(username)),
       unfollow: (username) => dispatch(unfollow(username))
     };
