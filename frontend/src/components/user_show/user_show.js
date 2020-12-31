@@ -20,13 +20,6 @@ class UserShow extends React.Component {
   handleUnfollow() {
     this.props.unfollow(this.props.match.params.username);
   }
-  componentDidMount() {
-    this.setState({
-      events: this.props.userEvents(this.props.match.params.username),
-      render: 1,
-    });
-  }
-
 
 
   render() {
@@ -61,7 +54,10 @@ class UserShow extends React.Component {
               Work
             </h2>
             {Object.values(this.props.events).map((event) => {
-              if (event.category === "work")
+              if (
+                event.category === "work" &&
+                event.username === this.props.match.params.username
+              )
                 return <EventIndexItem event={event} />;
             })}
           </div>
@@ -72,7 +68,7 @@ class UserShow extends React.Component {
                 Social
               </h2>
               {Object.values(this.props.events).map((event) => {
-                if (event.category === "social")
+                if (event.category === "social" && event.username === this.props.match.params.username)
                   return <EventIndexItem event={event} />;
               })}
             </div>
@@ -83,7 +79,10 @@ class UserShow extends React.Component {
               School
             </h2>
             {Object.values(this.props.events).map((event) => {
-              if (event.category === "school")
+              if (
+                event.category === "school" &&
+                event.username === this.props.match.params.username
+              )
                 return <EventIndexItem event={event} />;
             })}
           </div>

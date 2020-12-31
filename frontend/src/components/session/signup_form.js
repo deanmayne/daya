@@ -37,13 +37,10 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       username: this.state.username,
-      password: this.state.password,
-      password2: this.state.password2,
+      password: this.state.password
     };
 
-    this.props.signup(user).then((user) => {
-      this.props.login(user).then(() => this.props.history.push("/newsfeed"));
-    });
+      this.props.signup(user).then(() => this.props.history.push("/newsfeed"));
   }
 
   renderErrors() {
