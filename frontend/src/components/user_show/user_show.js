@@ -29,6 +29,8 @@ class UserShow extends React.Component {
           follow={this.props.follow} unfollow={this.props.unfollow} 
           history={this.props.history}/>
         </div>
+        <div className='gradient-border' id="box">
+
         <div id="cal-container">
           <div className="column">
             {" "}
@@ -68,6 +70,7 @@ class UserShow extends React.Component {
                 return <EventIndexItem event={event} />;
             })}
           </div>
+        </div>
         </div>
       </div>
     );
