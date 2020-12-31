@@ -28,9 +28,14 @@ class NavBar extends React.Component {
 
                         <img id="logo" alt="pic" src="sunlogo.png" />
                         <Link to="/newsfeed"><h1 id="nav-header">DAYA </h1></Link>
+                        <div id="nav-links">
+
+                            <Link to={`/calendar/${this.props.user.username}`}><div id="nav-link"> My Calendar</div></Link>
+                        </div>
                     </div>
-                    <Link to={`/calendar/${this.props.user.username}`}><div> My Calendar</div></Link>
-                    <button onClick={this.logoutUser} className="user-auth-button">Logout</button>
+                    <div id="button-container">
+                        <button id="edit-button" onClick={this.logoutUser} className="user-auth-button">Logout</button>
+                    </div>
                 </div>
             )
         } else {

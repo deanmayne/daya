@@ -127,6 +127,16 @@ a {
 
 }
 
+#nav-links {
+    margin-left: 100px;
+
+}
+
+#nav-link {
+    color: slateblue;
+    font-weight: 600;
+    font-size: 16px;
+}
 
 #login:hover {
     /* background-color: mediumslateblue; */
