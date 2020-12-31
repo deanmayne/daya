@@ -5,7 +5,7 @@ import { follow, unfollow } from "../../actions/session_actions";
 
 const mapStateToProps = (state) => {
      return ({
-         user: state.session.user,
+         currentUser: state.session.user,
          events: state.events
      })
 }

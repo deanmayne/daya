@@ -25,7 +25,7 @@ class UserShow extends React.Component {
       <div id="calendar">
         <div id="show-edit">
           <h1 id="nav-header">Calendar</h1>
-          <Buttons user={this.props.user} params={this.props.match.params} 
+          <Buttons user={this.props.currentUser} params={this.props.match.params} 
           follow={this.props.follow} unfollow={this.props.unfollow} 
           history={this.props.history}/>
         </div>
@@ -40,7 +40,7 @@ class UserShow extends React.Component {
                 event.category === "work" &&
                 event.username === this.props.match.params.username
               )
-                return <EventIndexItem event={event} />;
+                return <EventIndexItem event={event} currentUser = {this.props.currentUser} />;
             })}
           </div>
           <div className="column">
@@ -51,7 +51,7 @@ class UserShow extends React.Component {
               </h2>
               {Object.values(this.props.events).map((event) => {
                 if (event.category === "social" && event.username === this.props.match.params.username)
-                  return <EventIndexItem event={event} />;
+                  return <EventIndexItem event={event} currentUser = {this.props.currentUser}  />;
               })}
             </div>
           </div>
@@ -65,7 +65,7 @@ class UserShow extends React.Component {
                 event.category === "school" &&
                 event.username === this.props.match.params.username
               )
-                return <EventIndexItem event={event} />;
+                return <EventIndexItem event={event} currentUser={this.props.currentUser} />;
             })}
           </div>
         </div>

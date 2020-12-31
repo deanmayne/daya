@@ -24,11 +24,11 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.formType !== "Create An Event !") {
-      this.setState({
-        ["id"]: this.props.history.location.pathname.match(/\d+/)[0],
-      });
-    }
+    // if (this.props.formType !== "Create An Event !") {
+    //   this.setState({
+    //     ["id"]: this.props.history.location.pathname.match(/\d+/)[0],
+    //   });
+    // }
 
     const event = Object.assign({}, this.state);
     this.props.processForm(event).then((event) => {
