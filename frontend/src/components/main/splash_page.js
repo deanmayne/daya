@@ -11,9 +11,12 @@ class SplashPage extends React.Component {
             <div>
                 <div id="img-container">
                     <div id="header-container">
-                        <h1 id="nav-header">the social planner</h1>
-                        <text id="splash-description"> Organize your calendar and easily share it with your friends. </text>
-                        <Link to={'/signup'}><button className="user-auth-button" id="edit-button">Sign Up</button></Link>
+                        <div id="header-content">
+
+                            <h1 id="nav-header">the social planner</h1>
+                            <div id="splash-description"> Organize your calendar and easily share it with your friends. </div>
+                            <Link to={'/signup'}><button className="user-auth-button" id="edit-button">Sign Up</button></Link>
+                        </div>
 
                     </div>
                     <img id="splash-img" alt="pic" src="splash_img.jpg" />

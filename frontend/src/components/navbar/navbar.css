@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
+
+
 .user-auth-button {
     border: none;
     outline: none;
     background-color: white;
     height: 30px;
-    width: 15opx;
+    width: 15px;
     margin-top: 20px;
     margin-right: 20px;
     font-weight: 700; 
@@ -31,31 +33,47 @@
 
 #img-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    box-shadow: 0 2px 4px -2px gray
+    box-shadow: 0 2px 4px -2px gray;
+    /* background-image: url(yellowbg.jpg) */
 }
 
 #nav-header {
     padding-left: 20px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
-    color: slateblue;
+    color: darkslateblue;
 }
 
 #splash-img {
-    height: 698px;
-    width: 700px;
+    height: 90%;
+    /* width: 700px; */
     border-radius: 8px;
+    margin: 5px;
 }
 
 #header-container {
+    /* height: 498px;
+    width: 400px; */
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 360px;
+    height: 90%;
+    width: 35%;
+    background-image: url(whitebg.jpg);
+    margin: 20px;
+
+
+}
+
+#header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35%;
 }
 
 /* #sign-up {
@@ -77,6 +95,9 @@
 #splash-description {
     /* display: flex; */
     text-align: center;
+    color: darkslateblue;
+    font-weight: 700;;
+    
 }
 
 a {
