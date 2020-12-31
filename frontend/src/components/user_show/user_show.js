@@ -63,13 +63,7 @@ class UserShow extends React.Component {
       <div id="calendar">
         <div id="show-edit">
           <h1 id="nav-header">Calendar</h1>
-          {/* <Buttons
-            user={this.props.currentUser}
-            params={this.props.match.params}
-            follow={this.props.follow}
-            unfollow={this.props.unfollow}
-            history={this.props.history}
-          /> */}
+
           {userShowButtons()}
         </div>
         <div id="cal-container">
