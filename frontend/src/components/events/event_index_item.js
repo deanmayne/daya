@@ -28,14 +28,16 @@ class EventIndexItem extends React.Component {
     } else {
       return (
         <div className="event" id={category}>
-          <div className="event-card">{title}</div>
-          <div className="event-card">{newDate()}</div>
-          <div className="event-card">{category}</div>
-          <Link to={`/calendar/${username}`}>{username}</Link>
-          {username === currentUser.username ? (
-            <Link to={"/editEvent/" + _id}>Edit</Link>
-          ) : null}
-        </div>
+          <Link id="event-link" to={`/calendar/${username}`}>
+            <h3 id="event-header">{title}</h3> 
+            <div className="event-card">{newDate()}</div>
+            <div className="event-card">{category}</div>
+            <div className="event-card">{username}</div>
+            {username === currentUser.username ? (
+              <Link to={"/editEvent/" + _id}>Edit</Link>
+            ) : null}
+        </Link>
+          </div>
       );
     }
   }

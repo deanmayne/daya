@@ -23,7 +23,7 @@ class Follow extends React.Component {
           <Link to={`/calendar/${this.props.user.username}`}>
             <div className="follow-card" id={pickColor()}>
               <div>
-                <h3 id="event-header">Username: {this.props.user.username}</h3> 
+                <h3 id="event-header">{this.props.user.username}</h3> 
               </div>
               <div id="follow-text">Following: {this.props.user.following.length} </div>
             </div>

@@ -38,7 +38,14 @@ html {
     padding: 10px;
     margin: 10px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
     /* font-weight: 700; */
+}
+
+#event-link {
+    color: white;
 }
 
 .show-header {
