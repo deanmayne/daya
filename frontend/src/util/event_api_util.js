@@ -17,5 +17,6 @@ export const writeEvent = (data) => {
 };
 
 export const updateEvent = (event) => {
-  return axios.post(`/api/events/${event.id}`, event);
+    debugger
+  return axios.patch(`/api/events/${event.id}`, event);
 };

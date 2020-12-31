@@ -34,7 +34,7 @@ export const composeEvent = (data) => (dispatch) =>
     .then((event) => dispatch(receiveNewEvent(event)))
     .catch((err) => console.log(err));
 
-export const updateAnEvent = (data) => (dispatch) =>
-  updateEvent(data)
+export const updateAnEvent = (event) => (dispatch) =>
+  updateEvent(event)
     .then((event) => dispatch(receiveNewEvent(event)))
     .catch((err) => console.log(err));

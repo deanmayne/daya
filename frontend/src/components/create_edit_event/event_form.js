@@ -34,13 +34,17 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+        let event;
+      if (this.props.formType === "Update An Event !") {
 
-    const event = Object.assign({}, this.state);
-    this.props.processForm(event).then((event) => {
-      if (this.props.formType === "Create An Event !") {
-        // this.props.history.push(`/event/${event.event.id}`);
-        this.props.history.push(`calendar/${this.props.currentUser}/`);
+     event = Object.assign({}, this.state, {id: this.props.match.params.id});
+          
+      }else{
+           event = Object.assign({}, this.state);
       }
+    this.props.processForm(event).then((event) => {
+        debugger
+        this.props.history.push(`/calendar/${this.props.currentUser}/`);
     });
   }
 
