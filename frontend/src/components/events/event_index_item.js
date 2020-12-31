@@ -7,23 +7,32 @@ class EventIndexItem extends React.Component {
   }
 
   render() {
-    const { title, category, date, username } = this.props.event;
+    const { _id, title, category, date, username } = this.props.event;
     const { currentUser } = this.props;
+
+    const newDate = () => {
+      const newDate = new Date(date);
+      return (
+        newDate.getMonth() +
+        1 +
+        "/" +
+        newDate.getDate() +
+        "/" +
+        newDate.getFullYear()
+      );
+    };
+
     if (!this.props.event) {
       return null;
     } else {
       return (
         <div className="event" id={category}>
           <div className="event-card">{title}</div>
-          <div className="event-card">{date}</div>
+          <div className="event-card">{newDate()}</div>
           <div className="event-card">{category}</div>
-          <Link to={`/calendar/${username}`}>
-            <div>{username}</div>
-          </Link>
+          <Link to={`/calendar/${username}`}>{username}</Link>
           {username === currentUser.username ? (
-            <div>
-              <button type="button">Edit</button>
-            </div>
+            <Link to={"/editEvent/" + _id}>Edit</Link>
           ) : null}
         </div>
       );

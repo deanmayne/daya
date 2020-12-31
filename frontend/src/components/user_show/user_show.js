@@ -1,10 +1,8 @@
-import React from 'react';
-import './show.css';
-import EventIndexItem from '../events/event_index_item'
-import NavBarContainer from '../navbar/navbar_container'
-import { Link } from 'react-router-dom'
-import Buttons from './buttons';
-
+import React from "react";
+import "./show.css";
+import EventIndexItem from "../events/event_index_item";
+import NavBarContainer from "../navbar/navbar_container";
+import { Link } from "react-router-dom";
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -15,19 +13,58 @@ class UserShow extends React.Component {
     };
   }
 
-  componentDidMount(){
-    this.props.fetchEvents()
+  componentDidMount() {
+    this.props.fetchEvents();
+    this.props.fetchUsers();
   }
 
   render() {
-    console.log(this.props)
+    const { users, currentUser, follow, unfollow } = this.props;
+    const { username } = this.props.match.params;
+
+    const userShowButtons = () => {
+      let id = "";
+      if (currentUser.username === username) {
+        return (
+          <button
+            onClick={() => this.props.history.push("/createEvent")}
+            id="edit-button"
+          >
+            <div id="button-text">Add Event</div>
+          </button>
+        );
+      } else {
+        users.forEach((user) => {
+          if (user.username === username) {
+            id = user._id;
+          }
+        });
+        if (currentUser.following.includes(id)) {
+          return (
+            <button id="edit-button">
+              <div onClick={() => unfollow(username)} id="button-text">
+                Unfollow
+              </div>
+            </button>
+          );
+        } else if (!currentUser.following.includes(id)) {
+          return (
+            <button id="edit-button">
+              <div onClick={() => follow(username)} id="button-text">
+                Follow
+              </div>
+            </button>
+          );
+        }
+      }
+    };
+
     return (
       <div id="calendar">
         <div id="show-edit">
           <h1 id="nav-header">Calendar</h1>
-          <Buttons user={this.props.currentUser} params={this.props.match.params} 
-          follow={this.props.follow} unfollow={this.props.unfollow} 
-          history={this.props.history}/>
+
+          {userShowButtons()}
         </div>
         <div id="cal-container">
           <div className="column">
@@ -40,7 +77,13 @@ class UserShow extends React.Component {
                 event.category === "work" &&
                 event.username === this.props.match.params.username
               )
-                return <EventIndexItem event={event} currentUser = {this.props.currentUser} />;
+                return (
+                  <EventIndexItem
+                    key={event._id}
+                    event={event}
+                    currentUser={this.props.currentUser}
+                  />
+                );
             })}
           </div>
           <div className="column">
@@ -50,8 +93,17 @@ class UserShow extends React.Component {
                 Social
               </h2>
               {Object.values(this.props.events).map((event) => {
-                if (event.category === "social" && event.username === this.props.match.params.username)
-                  return <EventIndexItem event={event} currentUser = {this.props.currentUser}  />;
+                if (
+                  event.category === "social" &&
+                  event.username === this.props.match.params.username
+                )
+                  return (
+                    <EventIndexItem
+                      key={event._id}
+                      event={event}
+                      currentUser={this.props.currentUser}
+                    />
+                  );
               })}
             </div>
           </div>
@@ -65,7 +117,13 @@ class UserShow extends React.Component {
                 event.category === "school" &&
                 event.username === this.props.match.params.username
               )
-                return <EventIndexItem event={event} currentUser={this.props.currentUser} />;
+                return (
+                  <EventIndexItem
+                    key={event._id}
+                    event={event}
+                    currentUser={this.props.currentUser}
+                  />
+                );
             })}
           </div>
         </div>
@@ -74,6 +132,5 @@ class UserShow extends React.Component {
   }
 }
 // }
-
 
 export default UserShow;
