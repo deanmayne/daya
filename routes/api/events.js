@@ -68,7 +68,7 @@ router.post('/',
 // A Single Users Events (upcoming events page) 
   router.get('/:username', (req, res) => {
     Event.find({username: req.params.username})
-        .sort({ date: -1})
+        .sort({ date: 1})
         .then(events => res.json(events))
         .catch(err =>
             res.status(404).json({ noeventsfound: 'No Events Found' }
@@ -80,7 +80,7 @@ router.post('/',
 
 router.get('/', (req, res) => {
     Event.find()
-        .sort({date: -1 })
+        .sort({date: 1 })
         .then(events => res.json(events))
         .catch(err => res.status(404).json({ noEventsFound: 'No Events found'}));
 });
