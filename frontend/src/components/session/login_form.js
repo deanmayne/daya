@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
             <div className="login-container">
                 <div className="li-img-container">
 
-                    <img id="login1" alt="pic" src="login2.jpg"/>
+                    {/* <img id="login1" alt="pic" src="login2.jpg"/> */}
                 </div>
                 <form className="login-signup"onSubmit={this.handleSubmit}>
                     <div className="login">Log in</div>
@@ -94,7 +94,7 @@ class LoginForm extends React.Component {
                 </form>
                 <div className="li-img-container" id="container2">
 
-                    <img id="login2" alt="pic" src="login3.jpg" />
+                    {/* <img id="login2" alt="pic" src="login3.jpg" /> */}
                 </div>
             </div>
         );

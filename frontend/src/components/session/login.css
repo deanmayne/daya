@@ -88,8 +88,9 @@ input:focus {
 .login-container {
     display: flex;
     height: 100vh;
+    width: auto;
     justify-content: center;
     align-items: center;
     /* padding-top: 5%; */
-    background-image: url(brick.jpg);
+    background-image: url(login.jpg);
 }
