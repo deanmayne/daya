@@ -10,7 +10,7 @@ import UserShowContainer from './user_show/user_show_container';
 import Newsfeed from './newsfeed/newsfeed_container';
 import CreateFormContainer from './create_edit_event/create_event_form_container';
 import EditFormContainer from './create_edit_event/edit_event_form_container';
-import Follows from './suggested_follows/suggested_follows_container' 
+import Follows from './suggested_follows/suggested_follows_container'
 import FollowersContainer from './followers/followers_container';
 
 const App = () => (
@@ -20,14 +20,16 @@ const App = () => (
             <Route exact path="/login" component={LoginFormContainer} />
             <Route exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/newsfeed" component={Newsfeed} />
-            <Route exact path="/calendar/:username" component={UserShowContainer}/>
-            <ProtectedRoute exactpath="/suggestedfollows" component={Follows}/>
+            <Route exact path="/calendar/:username" component={UserShowContainer} />
+            <ProtectedRoute exact path="/suggestedfollows" component={Follows} />
+            <Route exact path='/editEvent/:id' component={EditFormContainer} />
+            <ProtectedRoute
+                exact
+                path="/createEvent"
+                component={CreateFormContainer}
+            />
             <Route exact path="/" component={SplashPage} />
-            {/* <Route exact path ='/editEvent' component = {EditFormContainer}/> */}
-            <Route exact path ='/createEvent' component = {CreateFormContainer}/>
-            {/* <Route exact path ='/createEvent' component = {CreateFormContainer}/> */}
-            {/* <Route exact path ='/dean' component = {FollowersContainer}/> */}
-            <Redirect to='/newsfeed' />
+            <Redirect to="/newsfeed" />
         </Switch>
     </div>
 );
