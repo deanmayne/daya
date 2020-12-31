@@ -16,7 +16,7 @@ class FollowerIndex extends React.Component {
     if (followers.length > 0) {
       return (
         <div>
-          <div>People You're Following</div>
+          <h2>People You're Following</h2>
           {users.map((user) => {
               // debugger
             if(followers.includes(user._id)) {
