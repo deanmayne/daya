@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import "./signup.css";
+import "./login.css";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -59,38 +59,36 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="signup">Sign up</div>
-          <div className="signup-form">
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <button className="continue" type="submit">
-              Continue
-            </button>
-            {this.renderErrors()}
-          </div>
-        </form>
-      </div>
+      <div className="login-container">
+                    <div className="li-img-container">
+
+                    {/* <img id="login1" alt="pic" src="login2.jpg"/> */}
+                </div>
+                <form className="login-signup"onSubmit={this.handleSubmit}>
+                    <div className="login">Sign Up</div>
+                    <div className="login-form">
+                        <input className="input" type="text"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            placeholder="Username"
+                        />
+                        <br />
+                        <input className="input" type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            placeholder="Password"
+                        />
+                        <br />
+                        <button className="continue" type="submit">Continue</button>
+                        {/* <input type="submit" value="Submit" /> */}
+                        {this.renderErrors()}
+                    </div>
+                </form>
+                <div className="li-img-container" id="container2">
+
+                    {/* <img id="login2" alt="pic" src="login3.jpg" /> */}
+                </div>
+            </div >
     );
   }
 }
