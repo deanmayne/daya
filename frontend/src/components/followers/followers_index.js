@@ -16,7 +16,6 @@ class FollowerIndex extends React.Component {
         <div>
           <div>People You're Following</div>
           {users.map((user) => {
-              debugger
             if(followers.includes(user._id)) {
             
               return  <Link to={`/calendar/${user.username}`}>{user.username}</Link>
