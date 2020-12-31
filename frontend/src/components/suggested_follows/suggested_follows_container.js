@@ -10,11 +10,11 @@ const mapStateToProps = (state) => {
     })
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return ({
-        fetchEvents: () => dispatch(fetchEvents()),
-        fetchUsers: () => dispatch(fetchUsers())
-    })
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return ({
+//         fetchEvents: () => dispatch(fetchEvents()),
+//         fetchUsers: () => dispatch(fetchUsers())
+//     })
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SuggestedFollows)
+export default connect(mapStateToProps, null)(SuggestedFollows)

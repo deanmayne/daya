@@ -35,8 +35,8 @@ class Newsfeed extends React.Component {
               <div>Following {this.props.currentUser.following.length} People</div>
               <br />
               <div> 
-                <h2>Upcoming Events </h2>
                 <FollowersIndex/>
+                <h2>Upcoming Events </h2>
 
                 {events.map((event) => {
                   if (currentUser.following.includes(event.user_id)) {
