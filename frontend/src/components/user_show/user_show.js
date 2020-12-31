@@ -35,21 +35,24 @@ class UserShow extends React.Component {
         <div id="show-edit">
           <h1 id="nav-header">Calendar</h1>
           {/* <Link to={`${this.props.match.params.username}/follow`}> */}
-          <button id="edit-button">
-            <div onClick={() => this.handleFollow()} id="button-text">
-              Follow
-            </div>
-          </button>
-          <button id="edit-button">
-            <div onClick={() => this.handleUnfollow()} id="button-text">
-              Unfollow
-            </div>
-          </button>
-          {/* </Link> */}
-          {/* <Link></Link> */}
-          <button id="edit-button">
-            <div id="button-text">Add Event</div>
-          </button>
+          <div id="button-container">
+
+            <button id="edit-button">
+              <div onClick={() => this.handleFollow()} id="button-text">
+                Follow
+              </div>
+            </button>
+            <button id="edit-button">
+              <div onClick={() => this.handleUnfollow()} id="button-text">
+                Unfollow
+              </div>
+            </button>
+            {/* </Link> */}
+            {/* <Link></Link> */}
+            <button id="edit-button">
+              <div id="button-text">Add Event</div>
+            </button>
+          </div>
         </div>
         <div id="cal-container">
           <div className="column">
