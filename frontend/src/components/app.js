@@ -24,8 +24,9 @@ const App = () => (
             <ProtectedRoute exactpath="/suggestedfollows" component={Follows}/>
             <Route exact path="/" component={SplashPage} />
             {/* <Route exact path ='/editEvent' component = {EditFormContainer}/> */}
+            <Route exact path ='/createEvent' component = {CreateFormContainer}/>
             {/* <Route exact path ='/createEvent' component = {CreateFormContainer}/> */}
-            <Route exact path ='/dean' component = {FollowersContainer}/>
+            {/* <Route exact path ='/dean' component = {FollowersContainer}/> */}
             <Redirect to='/newsfeed' />
         </Switch>
     </div>

@@ -17,9 +17,11 @@ const EventsReducer = (state = {}, action) => {
       // newState.user = action.events.data;
       newState = Object.assign({}, newState, action.events.data);
       return newState;
-    // case RECEIVE_NEW_EVENT:
-    //   newState.new = action.event.data;
-    //   return newState;
+    case RECEIVE_NEW_EVENT:
+      // newState.new = action.event.data;
+      // return newState;
+       newState = Object.assign({}, newState, action.event.data);
+      return newState;
     default:
       return state;
   }

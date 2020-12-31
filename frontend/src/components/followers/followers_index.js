@@ -11,24 +11,25 @@ class FollowerIndex extends React.Component {
 
   render() {
     const { users, followers } = this.props;
+    console.log(this.props)
 
-    if(followers.length > 0){
-        return (
-          <div>
-            <div>People You're Following</div>
-            {users.map((user) => (
-              // <Link to={`/calendar/${user.username}`}>
-              //   {user.username}
-              // </Link>
-              <Follow user={user}/>
-            ))}
-          </div>
-        );
-    }else{
-        <div>You're not following anyone !</div>
+    if (followers.length > 0) {
+      return (
+        <div>
+          <div>People You're Following</div>
+          {users.map((user) => {
+              // debugger
+            if(followers.includes(user._id)) {
+            
+              return  <Follow user={user}/>
+        
+            }
+         } )}
+        </div>
+      );
+    } else {
+      <div>You're not following anyone !</div>;
     }
-
-
   }
 }
 

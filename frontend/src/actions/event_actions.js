@@ -16,7 +16,7 @@ export const receiveUserEvents = (events) => ({
 
 export const receiveNewEvent = (event) => ({
   type: RECEIVE_NEW_EVENT,
-  event,
+  event
 });
 
 export const fetchEvents = () => (dispatch) =>
