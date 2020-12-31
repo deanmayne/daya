@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from 'react-router-dom';
 // import "./followers.scss";
 
 class FollowerIndex extends React.Component {
@@ -15,8 +16,8 @@ class FollowerIndex extends React.Component {
           <div>
             <div>People You're Following</div>
             {users.map((user) => (
-              <Link to={`/calendar/${username}`}>
-                {username}
+              <Link to={`/calendar/${user.username}`}>
+                {user.username}
               </Link>
             ))}
           </div>
