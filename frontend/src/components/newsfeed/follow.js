@@ -11,11 +11,9 @@ class Follow extends React.Component {
         return (
           <div>
             <div>
-              Username:
-              <Link to={`/calendar/${this.props.user.username}`}>{this.props.user.username}</Link>
+              <h3>Username: <Link id="user-link" to={`/calendar/${this.props.user.username}`}>{this.props.user.username}</Link></h3> 
             </div>
-            <div>Following: {this.props.user.following.length} people</div>
-
+            <div id="follow-text">Following: {this.props.user.following.length} </div>
             <br />
           </div>
         );

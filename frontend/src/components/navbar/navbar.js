@@ -21,9 +21,7 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div id="nav-container">
-                    {/* <Link to={'/tweets'}>All Tweets</Link>
-                    <Link to={'/new_tweet'}>Write a Tweet</Link> */}
-                    {/* <Link to={`/calendar/${this.state.user.id}`}>My Calendar</Link> */}
+
                     <div id="logo-container">
 
                         <img id="logo" alt="pic" src="sunlogo.png" />
@@ -31,6 +29,7 @@ class NavBar extends React.Component {
                         <div id="nav-links">
 
                             <Link to={`/calendar/${this.props.user.username}`}><div id="nav-link"> My Calendar</div></Link>
+                            <Link to={`/suggestedfollows`}><div id="nav-link"> Suggested Follows</div></Link>
                         </div>
                     </div>
                     <div id="button-container">
