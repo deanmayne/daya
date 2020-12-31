@@ -20,7 +20,6 @@ router.post('/',
         return res.status(400).json(errors);
       }
   
-      // console.log(req.user)
 
       const newEvent = new Event({
         title: req.body.title,

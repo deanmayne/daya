@@ -7,7 +7,7 @@ class EventIndexItem extends React.Component {
   }
 
   render() {
-    const { title, category, date, username } = this.props.event;
+    const { _id, title, category, date, username } = this.props.event;
     const { currentUser } = this.props;
     if (!this.props.event) {
       return null;
@@ -18,12 +18,11 @@ class EventIndexItem extends React.Component {
           <div className="event-card">{date}</div>
           <div className="event-card">{category}</div>
           <Link to={`/calendar/${username}`}>
-            <div>{username}</div>
+            {username}
           </Link>
           {username === currentUser.username ? (
-            <div>
-              <button type="button">Edit</button>
-            </div>
+            <Link to ={"/editEvent/"+_id}>Edit</Link>
+              
           ) : null}
         </div>
       );

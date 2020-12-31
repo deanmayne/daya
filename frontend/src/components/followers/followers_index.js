@@ -10,7 +10,6 @@ class FollowerIndex extends React.Component {
 
   render() {
     const { users, followers } = this.props;
-    console.log(this.props)
 
     if (followers.length > 0) {
       return (

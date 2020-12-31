@@ -23,7 +23,6 @@ class Buttons extends React.Component {
 
   render() {
 
-    console.log(this.props)
 
     if(this.props.params.username === this.props.user.username){
       return (

@@ -20,7 +20,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div id="calendar">
         <div id="show-edit">
