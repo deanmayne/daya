@@ -127,7 +127,6 @@ router.post('/:username/follow', passport.authenticate('jwt', {session: false}),
 
 
   let currentUser = req.user
-  // debugger
   User.findOne({ username: req.params.username })
     .then((user) => currentUser.follow(user.id))
     .then((user) => res.json({

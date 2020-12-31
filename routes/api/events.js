@@ -25,7 +25,8 @@ router.post('/',
         title: req.body.title,
         category: req.body.category,
         user_id: req.user.id,
-        username: req.body.username
+        username: req.body.username,
+        date: req.body.date
       });
 
       
