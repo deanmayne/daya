@@ -40,7 +40,7 @@ class Newsfeed extends React.Component {
 
                 {events.map((event) => {
                   if (currentUser.following.includes(event.user_id)) {
-                    return <EventIndexItem key={event._id} event={event} />;
+                    return <EventIndexItem key={event._id} event={event} currentUser={this.props.currentUser} />;
                   }
                 })}
               </div>
