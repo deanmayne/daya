@@ -10,19 +10,15 @@ class UserShow extends React.Component {
       ...this.props,
       render: 0,
     };
-    // console.log(this.props)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+
     this.handleFollow = this.handleFollow.bind(this);
   }
 
   handleFollow() {
-
     this.props.follow(this.props.match.params.username);
-
   }
   handleUnfollow() {
     this.props.unfollow(this.props.match.params.username);
-   
   }
   componentDidMount() {
     this.setState({
@@ -30,6 +26,9 @@ class UserShow extends React.Component {
       render: 1,
     });
   }
+
+
+
   render() {
     return (
       <div id="calendar">
@@ -52,34 +51,44 @@ class UserShow extends React.Component {
             <div id="button-text">Add Event</div>
           </button>
         </div>
-                <div id="cal-container">
-                        <div className="column" > <h2 className="show-header" id="work-header">Work</h2>
-                            {Object.values(this.props.events).map((event) => {
-                            if (event.category === "work") return <EventIndexItem event={event} />})
-                            }
-    
-                        </div>
-                  <div className="column">
-                            <div className="column" > <h2 className="show-header" id="social-header">Social</h2>
-                                {Object.values(this.props.events).map((event) => {
-                                    if (event.category === "social") return <EventIndexItem event={event} />
-                                })
-                                }
-
-                            </div>
-                  </div>
-                        <div className="column" > <h2 className="show-header" id="school-header">School</h2>
-                            {Object.values(this.props.events).map((event) => {
-                                if (event.category === "school") return <EventIndexItem event={event} />
-                            })
-                            }
-
-                        </div>
-                    </div>
-              </div>
-            );
-        }
-    }
+        <div id="cal-container">
+          <div className="column">
+            {" "}
+            <h2 className="show-header" id="work-header">
+              Work
+            </h2>
+            {Object.values(this.props.events).map((event) => {
+              if (event.category === "work")
+                return <EventIndexItem event={event} />;
+            })}
+          </div>
+          <div className="column">
+            <div className="column">
+              {" "}
+              <h2 className="show-header" id="social-header">
+                Social
+              </h2>
+              {Object.values(this.props.events).map((event) => {
+                if (event.category === "social")
+                  return <EventIndexItem event={event} />;
+              })}
+            </div>
+          </div>
+          <div className="column">
+            {" "}
+            <h2 className="show-header" id="school-header">
+              School
+            </h2>
+            {Object.values(this.props.events).map((event) => {
+              if (event.category === "school")
+                return <EventIndexItem event={event} />;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 // }
 
 

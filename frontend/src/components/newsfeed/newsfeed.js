@@ -1,5 +1,5 @@
 import React from "react";
-import NewsfeedItem from "./newsfeeditem";
+import EventIndexItem from '../events/event_index_item'
 import Follow from "./follow";
 
 class Newsfeed extends React.Component {
@@ -39,10 +39,8 @@ class Newsfeed extends React.Component {
               <br />
               <div>Upcoming Events </div>
               {events.map((event) => {
-                // debugger
                 if (currentUser.following.includes(event.user_id)) {
-                  // debugger;
-                  return <NewsfeedItem key={event._id} event={event} />;
+                  return <EventIndexItem key={event._id} event={event} />;
                 }
               })}
             </div>

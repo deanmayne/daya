@@ -16,6 +16,7 @@ class EventIndex extends React.Component {
     this.props.fetchEvents();
   }
 
+
   // componentWillReceiveProps(newState) {
   //   this.setState({ events: newState.events });
   // }
