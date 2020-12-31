@@ -11,20 +11,6 @@ class UserShow extends React.Component {
       ...this.props,
       render: 0,
     };
-
-    this.handleFollow = this.handleFollow.bind(this);
-    this.handleUnfollow = this.handleUnfollow.bind(this);
-  }
-
-  handleFollow() {
-    this.props.follow(this.props.params.username);
-  }
-  handleUnfollow() {
-    this.props.unfollow(this.props.params.username);
-  }
-
-  handleCreate() {
-    this.props.history.push("/createEvent");
   }
 
   componentDidMount() {
@@ -33,14 +19,17 @@ class UserShow extends React.Component {
   }
 
   render() {
-    const { users, currentUser } = this.props;
+    const { users, currentUser, follow, unfollow } = this.props;
     const { username } = this.props.match.params;
 
     const Buttons = () => {
       let id = "";
       if (currentUser.username === username) {
         return (
-          <button onClick={() => this.handleCreate()} id="edit-button">
+          <button
+            onClick={() => this.props.history.push("/createEvent")}
+            id="edit-button"
+          >
             <div id="button-text">Add Event</div>
           </button>
         );
@@ -50,11 +39,10 @@ class UserShow extends React.Component {
             id = user._id;
           }
         });
-
         if (currentUser.following.includes(id)) {
           return (
             <button id="edit-button">
-              <div onClick={() => this.handleUnfollow()} id="button-text">
+              <div onClick={() => unfollow(username)} id="button-text">
                 Unfollow
               </div>
             </button>
@@ -62,14 +50,13 @@ class UserShow extends React.Component {
         } else if (!currentUser.following.includes(id)) {
           return (
             <button id="edit-button">
-              <div onClick={() => this.handleFollow()} id="button-text">
+              <div onClick={() => follow(username)} id="button-text">
                 Follow
               </div>
             </button>
           );
         }
       }
-      return null;
     };
 
     return (

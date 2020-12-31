@@ -147,9 +147,15 @@ router.delete('/:username/unfollow', passport.authenticate('jwt', {session: fals
 
   let currentUser = req.user
 
-    User.findOne({username: req.params.username})
-      .then(user => currentUser.unfollow(user.id))
-      .then(user => res.json({follows: user.following}))
+    User.findOne({ username: req.params.username })
+      .then((user) => currentUser.unfollow(user.id))
+      .then((user) =>
+        res.json({
+          id: user.id,
+          username: user.username,
+          following: user.following,
+        })
+      );
 })
 
 
