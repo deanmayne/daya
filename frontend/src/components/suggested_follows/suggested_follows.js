@@ -6,6 +6,10 @@ class SuggestedFollows extends React.Component {
         super(props);
         // this.state = { color: 0 }
     }
+
+    componentDidMount() {
+        this.props.fetchUsers()
+    }
     
     render() {
         
@@ -19,15 +23,19 @@ class SuggestedFollows extends React.Component {
                 };
             }) 
         }
-        
-        return (
-            <div>
-                <h1 id="nav-header">Suggested People to Follow <img id="cal-logo" alt="pic" src="add-group.png" /></h1>
+        if (!this.props.users) {
+            return null;
+        } else {
+
+            return (
                 <div>
-                    {followItem()}
+                    <h1 id="nav-header">Suggested People to Follow <img id="cal-logo" alt="pic" src="add-group.png" /></h1>
+                    <div>
+                        {followItem()}
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 

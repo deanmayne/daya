@@ -88,7 +88,7 @@ class UserShow extends React.Component {
                 );
             })}
           </div>
-          <div className="column">
+
             <div className="column">
               {" "}
               <h2 className="show-header" id="social-header">
@@ -108,7 +108,7 @@ class UserShow extends React.Component {
                   );
               })}
             </div>
-          </div>
+          
           <div className="column">
             {" "}
             <h2 className="show-header" id="school-header">
