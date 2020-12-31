@@ -14,32 +14,23 @@ class UserShow extends React.Component {
     // this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFollow = this.handleFollow.bind(this);
   }
-  // handleSubmit(){
-  //   console.log(this.props)
-  //   this.props.user.follow(this.props.match.params.username);
-  // }
+
   handleFollow() {
-    // debugger
-    // console.log(this.props)
+
     this.props.follow(this.props.match.params.username);
-    // return axios.post(`/${this.props.match.params.username}/follow`)
+
   }
   handleUnfollow() {
-    // debugger
-    // console.log(this.props)
     this.props.unfollow(this.props.match.params.username);
-    // return axios.post(`/${this.props.match.params.username}/follow`)
+   
   }
   componentDidMount() {
     this.setState({
       events: this.props.userEvents(this.props.match.params.username),
       render: 1,
     });
-    // console.log(this.state)
   }
   render() {
-    // console.log(this.state)
-    // debugger
     return (
       <div id="calendar">
         <div id="show-edit">
