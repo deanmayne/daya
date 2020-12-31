@@ -22,7 +22,7 @@ class SuggestedFollows extends React.Component {
         
         return (
             <div>
-                <h1 id="nav-header">Suggested People to Follow</h1>
+                <h1 id="nav-header">Suggested People to Follow <img id="cal-logo" alt="pic" src="add-group.png" /></h1>
                 <div>
                     {followItem()}
                 </div>

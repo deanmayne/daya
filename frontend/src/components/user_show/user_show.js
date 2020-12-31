@@ -24,7 +24,7 @@ class UserShow extends React.Component {
     return (
       <div id="calendar">
         <div id="show-edit">
-          <h1 id="nav-header">Calendar</h1>
+          <h1 id="nav-header">Calendar <img id="cal-logo" alt="pic" src="calendar.png" /> </h1>
           <Buttons user={this.props.user} params={this.props.match.params} 
           follow={this.props.follow} unfollow={this.props.unfollow} 
           history={this.props.history}/>
