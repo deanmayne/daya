@@ -24,7 +24,11 @@ class NavBar extends React.Component {
                     {/* <Link to={'/tweets'}>All Tweets</Link>
                     <Link to={'/new_tweet'}>Write a Tweet</Link> */}
                     {/* <Link to={`/calendar/${this.state.user.id}`}>My Calendar</Link> */}
-                    <Link to="/newsfeed"><h2 id="nav-header">DAYA <img id="logo" alt="pic" src="sunlogo.png" /></h2></Link>
+                    <div id="logo-container">
+
+                        <img id="logo" alt="pic" src="sunlogo.png" />
+                        <Link to="/newsfeed"><h1 id="nav-header">DAYA </h1></Link>
+                    </div>
                     <Link to={`/calendar/${this.props.user.username}`}><div> My Calendar</div></Link>
                     <button onClick={this.logoutUser} className="user-auth-button">Logout</button>
                 </div>
@@ -35,8 +39,8 @@ class NavBar extends React.Component {
                     <div id="nav-container">
                         <div id="logo-container">
 
-                            <Link to="/"><h1 id="nav-header">DAYA </h1></Link>
                             <img id="logo" alt="pic" src="sunlogo.png" />
+                            <Link to="/"><h1 id="nav-header">DAYA </h1></Link>
                         </div>
                         <div id="button-container">
     
