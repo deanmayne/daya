@@ -10,7 +10,7 @@ import UserShowContainer from './user_show/user_show_container';
 import Newsfeed from './newsfeed/newsfeed_container';
 import CreateFormContainer from './create_edit_event/create_event_form_container';
 import EditFormContainer from './create_edit_event/edit_event_form_container';
-import Follows from './suggested_follows/suggested_follows_container' 
+import Follows from './suggested_follows/suggested_follows_container'
 import FollowersContainer from './followers/followers_container';
 
 const App = () => (

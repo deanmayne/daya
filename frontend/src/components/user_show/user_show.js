@@ -62,10 +62,12 @@ class UserShow extends React.Component {
     return (
       <div id="calendar">
         <div id="show-edit">
-          <h1 id="nav-header">Calendar</h1>
+          <h1 id="nav-header">Calendar <img id="cal-logo" alt="pic" src="calendar.png" /></h1>
 
           {userShowButtons()}
         </div>
+        <div className='gradient-border' id="box">
+
         <div id="cal-container">
           <div className="column">
             {" "}
@@ -126,6 +128,7 @@ class UserShow extends React.Component {
                 );
             })}
           </div>
+        </div>
         </div>
       </div>
     );

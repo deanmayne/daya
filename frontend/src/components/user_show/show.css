@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html {
+    height: 100%;
+}
 #calendar {
     margin-top: 20px;
+    height: 100%
 }
 
 #cal-container {
@@ -29,13 +33,14 @@
 }
 
 .event {
-    border-radius: 5px;
+    border-radius: 8px;
     width: 90%;
     margin: 10px;
-    height: 10%;
+    height: 95px;
     padding: 10px;
+    margin: 10px;
     color: white;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .show-header {
@@ -115,3 +120,40 @@
     color:  rgb(204,0,204)
 }
 
+.gradient-border {
+  --borderWidth: 3px;
+  background-color: white;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 6s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#cal-logo {
+   height: 40px;
+   width: 40px; 
+}
