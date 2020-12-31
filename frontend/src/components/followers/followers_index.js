@@ -13,9 +13,11 @@ class FollowerIndex extends React.Component {
     if(followers.length > 0){
         return (
           <div>
-              <div>People You're Following</div>
+            <div>People You're Following</div>
             {users.map((user) => (
-              <div>{user.username}</div>
+              <Link to={`/calendar/${username}`}>
+                {username}
+              </Link>
             ))}
           </div>
         );
