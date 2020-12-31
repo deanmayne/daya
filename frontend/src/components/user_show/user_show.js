@@ -22,7 +22,7 @@ class UserShow extends React.Component {
     const { users, currentUser, follow, unfollow } = this.props;
     const { username } = this.props.match.params;
 
-    const Buttons = () => {
+    const userShowButtons = () => {
       let id = "";
       if (currentUser.username === username) {
         return (
@@ -70,7 +70,7 @@ class UserShow extends React.Component {
             unfollow={this.props.unfollow}
             history={this.props.history}
           /> */}
-          {Buttons()}
+          {userShowButtons()}
         </div>
         <div id="cal-container">
           <div className="column">
