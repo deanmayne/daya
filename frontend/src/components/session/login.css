@@ -8,6 +8,7 @@
     background-color: slateblue;
     color: white;
     border-radius: 8px;
+    font-weight: 700;
 }
 
 .continue:hover {
@@ -17,17 +18,19 @@
 
 
 .login {
-    color:slateblue;
+    color:darkslateblue;
     font-family: "Lato", sans-serif;
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 38px;
+    font-weight: 700;
     display: flex;
     justify-content: center;
 }
 
 .li-img-container {
-    height: 350px;
+    height: 100%;
     margin: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .login-signup {
@@ -35,13 +38,18 @@
     flex-direction: column;
     align-items: center;
     /* height: 100vh; */
-    align-items: center;
+    justify-content: center;
     /* margin-top: 15%; */
 }
 
 .input {
     border-radius: 8px;
-    border: 1px slateblue solid;
+    border: 1.5px mediumslateblue solid;
+}
+
+input:focus {
+    border: darkslateblue 1.5px solid;
+    outline: none;
 }
 
 .login-form > input, button {
@@ -60,16 +68,28 @@
 #login1 {
     height: 450px;
     width: 450px;
+    margin: 30px;
 }
 
 #login2 {
-    height: 450px;
-    width: 450px;
+    height: 600px;
+    width: 500px;
+    margin: 30px;
 
 }
 
 #container2 {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin: 20px;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 5%; */
+    background-image: url(brick.jpg);
 }

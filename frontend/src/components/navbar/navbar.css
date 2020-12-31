@@ -44,14 +44,19 @@
     padding-left: 20px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
-    color: darkslateblue;
+    color: slateblue;
 }
 
 #splash-img {
     height: 90%;
+    width: 40%;
     /* width: 700px; */
     border-radius: 8px;
     margin: 5px;
+}
+
+#splash-header {
+    color: darkslateblue;
 }
 
 #header-container {
