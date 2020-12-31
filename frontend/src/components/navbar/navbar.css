@@ -33,6 +33,7 @@
 #button-container {
     display: flex;
     align-items: center;
+    /* margin-right: 10px; */
     /* justify-content: space-between; */
 }
 
@@ -118,6 +119,7 @@ a {
 #login {
     color: slateblue;
     font-size: 16px;
+    font-weight: 600;
     height: 34px;
     width: 100px;
     /* vertical-align: center; */
