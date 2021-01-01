@@ -19,8 +19,10 @@ const EventsReducer = (state = {}, action) => {
        newState = Object.assign({}, newState, action.event.data);
       return newState;
     case REMOVE_EVENT: 
+    // debugger
     Object.values(newState).forEach((event) => {
-        if (event._id === action.event.id) {
+      if (event._id === action.event.id) {
+
           delete newState[event];
         }
       })

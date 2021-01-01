@@ -65,7 +65,7 @@ router.post('/',
   router.delete('/:event_id', passport.authenticate('jwt', { session: false }), 
     (req, res) => {
       Event.deleteOne({_id: req.params.event_id})
-        .then(event => res.json(event))
+        .then(event => { debugger; res.json(event)})
         .catch(err => res.status(404).json({ noeventfound: 'No Event Found' }))
   })
 
