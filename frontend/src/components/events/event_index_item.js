@@ -17,21 +17,27 @@ class EventIndexItem extends React.Component {
     const { currentUser } = this.props;
 
     const newDate = () => {
-      const newDate = date.split('T')[0].split('-')
+      const newDate = new Date(date);
       return (
-        `${newDate[1]}/${newDate[2]}/${newDate[0]}`
-      )
+        (newDate.getMonth() + 1) +
+        "/" +
+        (newDate.getDate() + 1) +
+        "/" +
+        newDate.getFullYear()
+      );
     };
 
     if (!this.props.event) {
       return null;
     } else {
       return (
+        <Link to={`/calendar/${username}`}>
+
         <div className="event" id={category}>
-          <div className="event-card">{title}</div>
+          <h3 className="event-card" id="event-header">{title}</h3>
           <div className="event-card">{newDate()}</div>
           <div className="event-card">{category}</div>
-          <Link to={`/calendar/${username}`}>{username}</Link>
+            <div className="event-card">{username}</div>
           {username === currentUser.username ? (
             <div>
               
@@ -40,6 +46,7 @@ class EventIndexItem extends React.Component {
             </div>
           ) : null}
         </div>
+        </Link>
       );
     }
   }
