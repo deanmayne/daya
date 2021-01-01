@@ -17,14 +17,9 @@ class EventIndexItem extends React.Component {
     const { currentUser } = this.props;
 
     const newDate = () => {
-      const newDate = new Date(date);
-      return (
-        (newDate.getMonth() + 1) +
-        "/" +
-        (newDate.getDate() + 1) +
-        "/" +
-        newDate.getFullYear()
-      );
+
+    const newDate = date.split("T")[0].split("-")
+    return `${newDate[1]}/${newDate[2]}/${newDate[0]}`;
     };
 
     if (!this.props.event) {
