@@ -1,0 +1,41 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space;
+    // height: 75%;
+    width: 50%;
+    // height: 30%;
+}
+
+.event-form {
+    // height: 100vh;
+    display: grid;
+    grid-gap: 20px;
+
+}
+
+.event-button {
+    border: none;
+    outline: none;
+    background-color: slateblue;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    width: 20%; 
+} 
+
+textarea {
+    resize: none;
+    outline: none;
+    font-size: 18px;
+    height: 160px;
+}
+
+#event-category {
+    height: 40px;
+    outline: none;
+}
+#event-date {
+    height: 40px;
+    outline: none;
+}

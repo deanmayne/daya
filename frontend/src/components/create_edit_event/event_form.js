@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import './event_form.scss';
 // import Icon from "../icons/icon";
 
 class EventForm extends React.Component {
@@ -58,7 +59,7 @@ class EventForm extends React.Component {
           <h2>{formType}</h2>
         </div>
         <div className="form-field">
-          <label htmlFor="event-title">Title: </label>
+          <label htmlFor="event-title"><h3>Title:</h3></label>
           <textarea
             cols="30"
             rows="10"
@@ -67,22 +68,22 @@ class EventForm extends React.Component {
           />
         </div>
         <div className="form-field">
-          <label htmlFor="event-category">Category: </label>
+          <label htmlFor="event-category"><h3>Category:</h3></label>
           <select id="event-category" onChange={this.update("category")}>
-            <option selected disabled></option>
+            <option selected disabled>Please Select</option>
             <option value="work">Work</option>
             <option value="social">Social</option>
             <option value="school">School</option>
           </select>
         </div>
         <div className="form-field">
-          <label htmlFor="event-date">Event Date:</label>
+          <label htmlFor="event-date"><h3>Event Date:</h3></label>
           <input type="date" id="event-date" onChange={this.update("date")} />
         </div>
 
         <button
           type="submit"
-          className="button button--primary button--block button--lg"
+          className="event-button"
         >
           {formType === "Create An Event !" ? "Create Event" : "Edit Event"}
         </button>
