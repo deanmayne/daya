@@ -15,7 +15,7 @@ class Newsfeed extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     this.props.fetchEvents();
     this.props.fetchUsers();
     this.loaded = true;
@@ -24,12 +24,12 @@ class Newsfeed extends React.Component {
   render() {
 
     const { events, users, currentUser } = this.props;
-    if (!this.loaded || currentUser.following === undefined || !this.state.events) {
+    if (!this.loaded || currentUser.following === undefined || !events) {
       return null;
     } else {
       if (currentUser.following.length === 0) {
         return (
-          <SuggestedFollows events={this.state.events}/>
+          <SuggestedFollows events={events}/>
         );
       } else {
           return (

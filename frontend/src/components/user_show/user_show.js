@@ -71,7 +71,7 @@ class UserShow extends React.Component {
 
           {userShowButtons()}
         </div>
-        <div className='gradient-border' id="box">
+        <div >
 
         <div id="cal-container">
           <div className="column">
