@@ -45,12 +45,17 @@ router.post('/',
         return res.status(400).json(errors);
       }
   
-      const updatedEvent = await Event.findByIdAndUpdate(req.params.event_id,
+      const updatedEvent = await Event.findByIdAndUpdate(
+        req.params.id,
         {
-            title: req.body.title, 
-            category: req.body.category
-        }, { new: true}
-        );
+          title: req.body.title,
+          category: req.body.category,
+          user_id: req.user.id,
+          username: req.body.username,
+          date: req.body.date,
+        },
+        { new: true }
+      );
 
 
       updatedEvent.save().then(event => res.send(event))
