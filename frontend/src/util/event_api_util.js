@@ -17,6 +17,11 @@ export const writeEvent = (data) => {
 };
 
 export const updateEvent = (event) => {
-    debugger
+    // debugger
   return axios.patch(`/api/events/${event.id}`, event);
+};
+
+export const deleteEvent = (event_id) => {
+    // debugger
+  return axios.delete(`/api/events/${event_id}`);
 };

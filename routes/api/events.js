@@ -46,7 +46,7 @@ router.post('/',
       }
   
       const updatedEvent = await Event.findByIdAndUpdate(
-        req.params.id,
+        req.params.event_id,
         {
           title: req.body.title,
           category: req.body.category,
@@ -65,7 +65,7 @@ router.post('/',
   router.delete('/:event_id', passport.authenticate('jwt', { session: false }), 
     (req, res) => {
       Event.deleteOne({_id: req.params.event_id})
-        .then(event => res.json({eventdeleted: 'Event Deleted'}))
+        .then(event => res.json(event))
         .catch(err => res.status(404).json({ noeventfound: 'No Event Found' }))
   })
 

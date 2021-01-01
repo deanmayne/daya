@@ -5,6 +5,11 @@ import '../newsfeed/newsfeed.scss'
 class EventIndexItem extends React.Component {
   constructor(props) {
     super(props);
+
+  }
+
+  componentDidMount(){
+    
   }
 
   render() {
@@ -14,10 +19,9 @@ class EventIndexItem extends React.Component {
     const newDate = () => {
       const newDate = new Date(date);
       return (
-        newDate.getMonth() +
-        1 +
+        (newDate.getMonth() + 1) +
         "/" +
-        newDate.getDate() +
+        (newDate.getDate() + 1) +
         "/" +
         newDate.getFullYear()
       );
@@ -33,7 +37,11 @@ class EventIndexItem extends React.Component {
           <div className="event-card">{category}</div>
           <Link to={`/calendar/${username}`}>{username}</Link>
           {username === currentUser.username ? (
-            <Link to={"/editEvent/" + _id}>Edit</Link>
+            <div>
+              
+              <Link to={"/editEvent/" + _id}>Edit</Link>
+              <button type="button" onClick={() => this.props.delete(_id)}>Delete</button>
+            </div>
           ) : null}
         </div>
       );

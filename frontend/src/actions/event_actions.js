@@ -1,8 +1,10 @@
-import { getEvents, getUserEvents, writeEvent, updateEvent } from "../util/event_api_util";
+import { getEvents, getUserEvents, writeEvent, updateEvent, deleteEvent } from "../util/event_api_util";
 
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_USER_EVENTS = "RECEIVE_USER_EVENTS";
 export const RECEIVE_NEW_EVENT = "RECEIVE_NEW_EVENT";
+export const REMOVE_EVENT = "REMOVE_EVENT";
+
 
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
@@ -17,6 +19,11 @@ export const receiveUserEvents = (events) => ({
 export const receiveNewEvent = (event) => ({
   type: RECEIVE_NEW_EVENT,
   event
+});
+
+export const removeEvent = (event) => ({
+  type: REMOVE_EVENT,
+  event,
 });
 
 export const fetchEvents = () => (dispatch) =>
@@ -38,3 +45,8 @@ export const updateAnEvent = (event) => (dispatch) =>
   updateEvent(event)
     .then((event) => dispatch(receiveNewEvent(event)))
     .catch((err) => console.log(err));
+
+  export const deleteAnEvent = (event_id) => dispatch => 
+    deleteEvent(event_id)
+      .then((event) => dispatch(removeEvent(event)))
+      .catch(err => console.log(err))

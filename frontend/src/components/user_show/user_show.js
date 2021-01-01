@@ -18,6 +18,7 @@ class UserShow extends React.Component {
     this.props.fetchUsers();
   }
 
+
   render() {
     const { users, currentUser, follow, unfollow } = this.props;
     const { username } = this.props.match.params;
@@ -84,6 +85,7 @@ class UserShow extends React.Component {
                     key={event._id}
                     event={event}
                     currentUser={this.props.currentUser}
+                    delete={this.props.delete}
                   />
                 );
             })}
@@ -104,6 +106,7 @@ class UserShow extends React.Component {
                       key={event._id}
                       event={event}
                       currentUser={this.props.currentUser}
+                      delete={this.props.delete}
                     />
                   );
               })}
@@ -124,6 +127,7 @@ class UserShow extends React.Component {
                     key={event._id}
                     event={event}
                     currentUser={this.props.currentUser}
+                    delete={this.props.delete}
                   />
                 );
             })}

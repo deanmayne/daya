@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchEvents} from '../../actions/event_actions';
+import { fetchEvents, deleteAnEvent } from "../../actions/event_actions";
 import {fetchUsers} from '../../actions/session_actions';
 import UserShow from './user_show';
 import { follow, unfollow } from "../../actions/session_actions";
@@ -17,7 +17,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       fetchEvents: () => dispatch(fetchEvents()),
       fetchUsers: () => dispatch(fetchUsers()),
       follow: (username) => dispatch(follow(username)),
-      unfollow: (username) => dispatch(unfollow(username))
+      unfollow: (username) => dispatch(unfollow(username)), 
+      delete: (eventId) => dispatch(deleteAnEvent(eventId))
     };
 }
 
