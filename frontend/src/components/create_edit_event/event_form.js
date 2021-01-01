@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
 import './event_form.scss';
-// import Icon from "../icons/icon";
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -50,7 +49,7 @@ class EventForm extends React.Component {
   }
 
   render() {
-    const { title, category, username } = this.state;
+    const { title } = this.state;
     const { formType } = this.props;
 
     const formPhoto = () => {

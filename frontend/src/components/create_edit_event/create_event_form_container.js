@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { composeEvent } from "../../actions/event_actions";
 import EventForm from "./event_form";
-import { removeErrors } from "../../actions/session_actions";
+
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.user.username,

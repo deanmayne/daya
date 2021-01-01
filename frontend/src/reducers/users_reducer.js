@@ -3,7 +3,7 @@ import {
 } from "../actions/session_actions";
 
 
-export default function(state = {}, action) {
+const UsersReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {
@@ -15,3 +15,5 @@ export default function(state = {}, action) {
             return state;
     }
 }
+
+export default UsersReducer;
