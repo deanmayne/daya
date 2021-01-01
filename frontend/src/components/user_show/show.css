@@ -38,7 +38,14 @@ html {
     padding: 10px;
     margin: 10px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
     /* font-weight: 700; */
+}
+
+#event-link {
+    color: white;
 }
 
 .show-header {
@@ -154,4 +161,13 @@ html {
 #cal-logo {
    height: 40px;
    width: 40px; 
+}
+
+#cal-logo-header {
+    display: flex;
+    align-items: center;
+}
+
+#cal-header-logo {
+    margin-right: 10px;
 }

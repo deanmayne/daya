@@ -25,7 +25,7 @@ class FollowerIndex extends React.Component {
     if (followers.length > 0) {
       return (
         <div>
-          <h2>People You're Following</h2>
+          <h2 id="header2">People You're Following</h2>
 
           {followItem()}
         </div>

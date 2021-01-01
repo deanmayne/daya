@@ -9,7 +9,7 @@ class EventIndexItem extends React.Component {
   }
 
   componentDidMount(){
-    
+
   }
 
   render() {
