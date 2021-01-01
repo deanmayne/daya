@@ -31,10 +31,10 @@ class Newsfeed extends React.Component {
       } else {
           return (
             <div>
-              <div id="logo-container">
+              <div id="logo-header">
 
                 <h1 id="header1">{this.props.currentUser.username}'s newsfeed</h1>
-                <img id="cal-logo" alt="pic" src="newsfeed.png" />
+                <img id="header-logo" alt="pic" src="newsfeed.png" />
                 
               </div>
 

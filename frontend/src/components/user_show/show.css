@@ -162,3 +162,12 @@ html {
    height: 40px;
    width: 40px; 
 }
+
+#cal-logo-header {
+    display: flex;
+    align-items: center;
+}
+
+#cal-header-logo {
+    margin-right: 10px;
+}

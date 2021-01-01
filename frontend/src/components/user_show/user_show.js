@@ -62,10 +62,10 @@ class UserShow extends React.Component {
     return (
       <div id="calendar">
         <div id="show-edit">
-          <div id="logo-container">
+          <div id="cal-logo-header">
 
+            <img id="cal-header-logo" alt="pic" src="calendar.png" />
             <h1 id="nav-header">Calendar</h1>
-            <img id="cal-logo" alt="pic" src="calendar.png" />
           </div>
 
           {userShowButtons()}
