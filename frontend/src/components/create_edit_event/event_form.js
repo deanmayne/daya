@@ -43,7 +43,7 @@ class EventForm extends React.Component {
            event = Object.assign({}, this.state);
       }
     this.props.processForm(event).then((event) => {
-        debugger
+
         this.props.history.push(`/calendar/${this.props.currentUser}/`);
     });
   }
