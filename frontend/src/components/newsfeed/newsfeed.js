@@ -31,10 +31,16 @@ class Newsfeed extends React.Component {
       } else {
           return (
             <div>
-                <h1>{this.props.currentUser.username}'s newsfeed</h1>
+              <div id="logo-container">
+
+                <h1 id="header1">{this.props.currentUser.username}'s newsfeed</h1>
+                <img id="cal-logo" alt="pic" src="newsfeed.png" />
+                
+              </div>
+
               <div id="newsfeed-container"> 
               <div id='newsfeed-events'>
-                  <h2>Upcoming Events </h2>
+                  <h2 id="header2">Upcoming Events </h2>
 
                 {events.map((event) => {
                   if (currentUser.following.includes(event.user_id)) {
