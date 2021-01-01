@@ -38,13 +38,13 @@ class EventIndexItem extends React.Component {
           <div className="event-card">{newDate()}</div>
           <div className="event-card">{category}</div>
             <div className="event-card">{username}</div>
-          {/* {username === currentUser.username ? (
-            <div>
+          {username === currentUser.username ? (
+            <div id="event-buttons">
               
-              <Link to={"/editEvent/" + _id}>Edit</Link>
-              <button type="button" onClick={() => this.props.delete(_id)}>Delete</button>
+              <Link id="event-edit"to={"/editEvent/" + _id}>Edit </Link>
+              <button type="button" id="event-delete" onClick={() => this.props.delete(_id)}>Delete </button>
             </div>
-          ) : null} */}
+          ) : null}
         </div>
         </Link>
       );

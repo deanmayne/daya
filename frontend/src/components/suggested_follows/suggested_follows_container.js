@@ -7,14 +7,16 @@ const mapStateToProps = (state) => {
     return ({
         users: Object.values(state.users),
         currentUser: state.session.user,
-        followers: state.session.user.following
+        followers: state.session.user.following,
+        events: state.events
     })
 }
 
 const mapDispatchToProps = (dispatch) => {
     return ({
         fetchEvents: () => dispatch(fetchEvents()),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()),
+        // fetchUserEvents: (username) => dispatch(fetchUserEvents(username))
     })
 }
 

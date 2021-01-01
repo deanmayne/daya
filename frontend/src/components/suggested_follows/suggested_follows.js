@@ -8,7 +8,8 @@ class SuggestedFollows extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUsers()
+        this.props.fetchUsers();
+        this.props.fetchEvents();
     }
     
     render() {
@@ -19,11 +20,11 @@ class SuggestedFollows extends React.Component {
                 if (!this.props.followers.includes(user._id)) {
                     // this.setState({ color: this.state.color + 1 })
                     color += 1;
-                    return (<Follow user={user} color={color} key={user._id} />)
+                    return (<Follow user={user} color={color} key={user._id} events={this.props.events} />)
                 };
             }) 
         }
-        if (!this.props.users) {
+        if (!this.props.users || !this.props.events) {
             return null;
         } else {
 

@@ -34,13 +34,12 @@ html {
     border-radius: 8px;
     width: 90%;
     margin: 10px;
-    height: 95px;
+    height: 100px;
     padding: 10px;
     margin: 10px;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly
+    display: grid;
+    grid-gap: 5px;
     /* font-weight: 700; */
 }
 
@@ -174,4 +173,30 @@ html {
 
 #event-link {
     width: 100%;
+}
+
+#event-edit {
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+}
+
+#event-delete {
+    border: none;
+    outline: none;
+    color: white;
+    font-style: italic;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px;
+    margin-left: 10px;
+    padding: 0px;
+}
+
+#event-buttons {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
 }

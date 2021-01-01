@@ -19,6 +19,20 @@ class Follow extends React.Component {
           return "color-2"
         }
       }
+
+      const eventCount = (user) => {
+        if (!this.props.events) {
+          return 0;
+        } else {
+
+          let count = 0;
+          Object.values(this.props.events).forEach(event => {
+            if (event.username === user.username) count += 1;
+          });
+
+          return count;
+        }
+      }
         return (
           <Link to={`/calendar/${this.props.user.username}`}>
             <div className="follow-card" id={pickColor()}>
@@ -26,6 +40,7 @@ class Follow extends React.Component {
                 <h3 id="event-header">{this.props.user.username}</h3> 
               </div>
               <div id="follow-text">Following: {this.props.user.following.length} </div>
+              <div id="follow-text">Events: {eventCount(this.props.user)} </div>
             </div>
           </Link>
         );

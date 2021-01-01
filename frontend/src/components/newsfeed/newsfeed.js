@@ -9,10 +9,13 @@ import './newsfeed.scss';
 class Newsfeed extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {...this.props};
     this.loaded = this.props.loaded;
+    console.log("events", this.props.events);
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchEvents();
     this.props.fetchUsers();
     this.loaded = true;
@@ -21,12 +24,12 @@ class Newsfeed extends React.Component {
   render() {
 
     const { events, users, currentUser } = this.props;
-    if (!this.loaded || currentUser.following === undefined ) {
+    if (!this.loaded || currentUser.following === undefined || !this.state.events) {
       return null;
     } else {
       if (currentUser.following.length === 0) {
         return (
-          <SuggestedFollows />
+          <SuggestedFollows events={this.state.events}/>
         );
       } else {
           return (
