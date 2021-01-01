@@ -8,10 +8,6 @@ class EventIndexItem extends React.Component {
 
   }
 
-  componentDidMount(){
-
-  }
-
   render() {
     const { _id, title, category, date, username } = this.props.event;
     const { currentUser } = this.props;
