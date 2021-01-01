@@ -171,3 +171,7 @@ html {
 #cal-header-logo {
     margin-right: 10px;
 }
+
+#event-link {
+    width: 100%;
+}
