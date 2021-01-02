@@ -3,28 +3,15 @@ import {Link} from 'react-router-dom'
 import '../newsfeed/newsfeed.scss'
 
 class EventIndexItem extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-  componentDidMount(){
-
-  }
 
   render() {
     const { _id, title, category, date, username } = this.props.event;
     const { currentUser } = this.props;
 
     const newDate = () => {
-      const newDate = new Date(date);
-      return (
-        (newDate.getMonth() + 1) +
-        "/" +
-        (newDate.getDate() + 1) +
-        "/" +
-        newDate.getFullYear()
-      );
+
+    const newDate = date.split("T")[0].split("-")
+    return `${newDate[1]}/${newDate[2]}/${newDate[0]}`;
     };
 
     if (!this.props.event) {

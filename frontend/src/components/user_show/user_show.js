@@ -1,8 +1,6 @@
 import React from "react";
-import "./show.css";
 import EventIndexItem from "../events/event_index_item";
-import NavBarContainer from "../navbar/navbar_container";
-import { Link } from "react-router-dom";
+import "./show.css";
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -17,7 +15,6 @@ class UserShow extends React.Component {
     this.props.fetchEvents();
     this.props.fetchUsers();
   }
-
 
   render() {
     const { users, currentUser, follow, unfollow } = this.props;
@@ -64,36 +61,36 @@ class UserShow extends React.Component {
       <div id="calendar">
         <div id="show-edit">
           <div id="cal-logo-header">
-
             <img id="cal-header-logo" alt="pic" src="calendar.png" />
             <h1 id="nav-header">Calendar</h1>
           </div>
 
           {userShowButtons()}
         </div>
-        <div >
-
-        <div id="cal-container">
-          <div className="column">
-            {" "}
-            <h2 className="show-header" id="work-header">
-              Work
-            </h2>
-            {Object.values(this.props.events).map((event) => {
-              if (
-                event.category === "work" &&
-                event.username === this.props.match.params.username
-              )
-                return (
-                  <EventIndexItem
-                    key={event._id}
-                    event={event}
-                    currentUser={this.props.currentUser}
-                    delete={this.props.delete}
-                  />
-                );
-            })}
-          </div>
+        <div>
+          <div id="cal-container">
+            <div className="column">
+              {" "}
+              <h2 className="show-header" id="work-header">
+                Work
+              </h2>
+              {Object.values(this.props.events).map((event) => {
+                if (
+                  event.category === "work" &&
+                  event.username === this.props.match.params.username
+                ) {
+                  return (
+                    <EventIndexItem
+                      key={event._id}
+                      event={event}
+                      currentUser={this.props.currentUser}
+                      delete={this.props.delete}
+                    />
+                  );
+                }
+                return null;
+              })}
+            </div>
 
             <div className="column">
               {" "}
@@ -104,7 +101,7 @@ class UserShow extends React.Component {
                 if (
                   event.category === "social" &&
                   event.username === this.props.match.params.username
-                )
+                ) {
                   return (
                     <EventIndexItem
                       key={event._id}
@@ -113,30 +110,32 @@ class UserShow extends React.Component {
                       delete={this.props.delete}
                     />
                   );
+                }
+                return null;
               })}
             </div>
-          
-          <div className="column">
-            {" "}
-            <h2 className="show-header" id="school-header">
-              School
-            </h2>
-            {Object.values(this.props.events).map((event) => {
-              if (
-                event.category === "school" &&
-                event.username === this.props.match.params.username
-              )
-                return (
-                  <EventIndexItem
-                    key={event._id}
-                    event={event}
-                    currentUser={this.props.currentUser}
-                    delete={this.props.delete}
-                  />
-                );
-            })}
+
+            <div className="column">
+              {" "}
+              <h2 className="show-header" id="school-header">
+                School
+              </h2>
+              {Object.values(this.props.events).map((event) => {
+                if (
+                  event.category === "school" &&
+                  event.username === this.props.match.params.username
+                ){
+                  return (
+                    <EventIndexItem
+                      key={event._id}
+                      event={event}
+                      currentUser={this.props.currentUser}
+                      delete={this.props.delete}
+                    />
+                  );} return null;
+              })}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     );

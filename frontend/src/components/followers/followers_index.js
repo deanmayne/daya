@@ -1,13 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Link } from 'react-router-dom';
 import Follow from '../newsfeed/follow'
 // import "./followers.scss";
 
 class FollowerIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.fetchEvents();
@@ -16,6 +12,7 @@ class FollowerIndex extends React.Component {
   render() {
     const { users, followers } = this.props;
     
+    // const { followers } = this.props;
     const followItem = () => {
       let color = 0;
       return this.props.users.map((user) => {
@@ -25,6 +22,7 @@ class FollowerIndex extends React.Component {
           color += 1;
           return (<Follow user={user} color={color} key={user._id} events={this.props.events} />)
         };
+        return null;
       })
     }
     if (followers.length > 0) {
