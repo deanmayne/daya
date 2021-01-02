@@ -57,11 +57,12 @@ textarea {
     margin-top: 100px;
     width: 90%;
     margin-left: 100px;
+    // z-index: -1;
 } 
 
 #form-img-container {
-    width: 100%;
-    // height: 100%;
+    width: 1200px;
+    height: 700px;
     display: flex;
     align-items: center;
     background-color: rgb(181,190,195);
@@ -71,6 +72,8 @@ textarea {
 #form-img {
     height: 100%;
     width: 100%;
+    // border: 1px solid pink;
+    z-index: 1;
 }
 
 #form-type {
