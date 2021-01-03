@@ -21,9 +21,6 @@ class Follow extends React.Component {
       }
 
       const eventCount = (user) => {
-        // if (!this.props.events) {
-        //   return 0;
-        // } else {
 
           let count = 0;
           Object.values(this.props.events).forEach(event => {
@@ -31,7 +28,7 @@ class Follow extends React.Component {
           });
 
           return count;
-        // }
+  
       }
         return (
           <Link to={`/calendar/${this.props.user.username}`}>

@@ -12,13 +12,12 @@ class FollowerIndex extends React.Component {
   render() {
     const { users, followers } = this.props;
     
-    // const { followers } = this.props;
+ 
     const followItem = () => {
       let color = 0;
       return this.props.users.map((user) => {
         if (this.props.followers.includes(user._id)) {
-          // this.setState({ color: this.state.color + 1 })
-          // console.log(this.props)
+
           color += 1;
           return (<Follow user={user} color={color} key={user._id} events={this.props.events} />)
         };

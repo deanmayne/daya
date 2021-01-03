@@ -18,10 +18,10 @@ class SplashPage extends React.Component {
 
                     </div>
                     <img id="splash-img" alt="pic" src="splash3.jpg" />
-                    {/* add multiple photos here */}
+              
                 </div>
             </div>
-            // </div>
+      
         );
     }
 }

@@ -37,9 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 100vh; */
     justify-content: center;
-    /* margin-top: 15%; */
 }
 
 .input {
@@ -93,4 +91,5 @@ input:focus {
     align-items: center;
     /* padding-top: 5%; */
     background-image: url(login.jpg);
+    
 }

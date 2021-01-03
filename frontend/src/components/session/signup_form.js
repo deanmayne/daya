@@ -15,15 +15,28 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.demoUser = this.demoUser.bind(this);
+
   }
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
       this.setState({ user: nextProps.currentUser });
-  ;
     }
 
     this.setState({ errors: nextProps.errors });
+  }
+
+  demoUser(e) {
+    e.preventDefault();
+    let DemoUser = {
+      username: 'DemoUser', 
+      password: 'password'
+    }
+    this.props
+      .login(DemoUser)
+      .then(() => this.props.history.push("/newsfeed"));
   }
 
   update(field) {
@@ -37,14 +50,13 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
     };
 
-      this.props.signup(user).then(() => this.props.history.push("/newsfeed"));
+    this.props.signup(user).then(() => this.props.history.push("/newsfeed"));
   }
 
   renderErrors() {
-    ;
     return (
       <ul>
         {Object.keys(this.props.errors).map((error, i) => (
@@ -57,35 +69,39 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="login-container">
-                    <div className="li-img-container">
+        <div className="li-img-container"></div>
+        <form className="login-signup" onSubmit={this.handleSubmit}>
+          <div className="login">Sign Up</div>
+          <div className="login-form">
+            <input
+              className="input"
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}
+              placeholder="Username"
+            />
+            <br />
+            <input
+              className="input"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+            />
+            <br />
+            <button className="continue" type="submit">
+              Continue
+            </button>
+            <br />
+            <button className="continue" type="submit" onClick={this.demoUser}>
+              Demo User Login
+            </button>
 
-                    {/* <img id="login1" alt="pic" src="login2.jpg"/> */}
-                </div>
-                <form className="login-signup"onSubmit={this.handleSubmit}>
-                    <div className="login">Sign Up</div>
-                    <div className="login-form">
-                        <input className="input" type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                        />
-                        <br />
-                        <input className="input" type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <button className="continue" type="submit">Continue</button>
-                        {/* <input type="submit" value="Submit" /> */}
-                        {this.renderErrors()}
-                    </div>
-                </form>
-                <div className="li-img-container" id="container2">
-
-                    {/* <img id="login2" alt="pic" src="login3.jpg" /> */}
-                </div>
-            </div >
+            {this.renderErrors()}
+          </div>
+        </form>
+        <div className="li-img-container" id="container2"></div>
+      </div>
     );
   }
 }
