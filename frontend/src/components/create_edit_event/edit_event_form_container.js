@@ -5,8 +5,8 @@ import EventForm from "./event_form";
 
 
 const mapStateToProps = (state) => ({
-    currentUser: state.session.user.username,
-  formType: "Update An Event !",
+  currentUser: state.session.user.username,
+  formType: "Update An Event !"
 });
 
 const mapDispatchToProps = (dispatch) => ({

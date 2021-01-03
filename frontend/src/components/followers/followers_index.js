@@ -5,21 +5,22 @@ import Follow from '../newsfeed/follow'
 
 class FollowerIndex extends React.Component {
 
-  componentDidMount(){
-    this.props.fetchEvents()
+  componentDidMount() {
+    this.props.fetchEvents();
   }
 
   render() {
-    console.log(this.props)
-    const { followers } = this.props;
+    const { users, followers } = this.props;
+    
+    // const { followers } = this.props;
     const followItem = () => {
       let color = 0;
       return this.props.users.map((user) => {
         if (this.props.followers.includes(user._id)) {
-          // console.log(user)
-
+          // this.setState({ color: this.state.color + 1 })
+          // console.log(this.props)
           color += 1;
-          return <Follow user={user} color={color} key={user._id} />
+          return (<Follow user={user} color={color} key={user._id} events={this.props.events} />)
         };
         return null;
       })
