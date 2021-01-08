@@ -30,7 +30,6 @@ UserSchema.methods.unfollow = function(id) {
 
 UserSchema.methods.isFollowing = function(id) {
   return this.following.includes(id)
-  // if we need a a string?
 }
 
 

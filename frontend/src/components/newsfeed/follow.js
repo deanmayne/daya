@@ -46,6 +46,3 @@ class Follow extends React.Component {
  
 export default Follow;
 
-// 12.31.2020
-  // sort by year, then month, then date
-// 8:00 pm

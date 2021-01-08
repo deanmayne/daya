@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProtectedRoute } from '../util/route_util';
+import { ProtectedRoute, AuthRoute } from '../util/route_util';
 import { Switch, Redirect, Route } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import SplashPage from './main/splash_page';
@@ -15,8 +15,8 @@ const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-      <Route exact path="/login" component={LoginFormContainer} />
-      <Route exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/newsfeed" component={Newsfeed} />
       <Route exact path="/calendar/:username" component={UserShowContainer} />
       <ProtectedRoute exact path="/suggestedfollows" component={Follows} />

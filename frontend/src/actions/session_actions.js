@@ -6,7 +6,7 @@ export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
-export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+// export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 
 
 
@@ -21,12 +21,6 @@ export const receiveUsers = (users) => ({
   users
 });
 
-
-// This will be used to redirect the user to the login page upon signup
-export const receiveUserSignIn = currentUser => ({
-    type: RECEIVE_USER_SIGN_IN,
-    currentUser
-});
 
 // We dispatch this one to show authentication errors on the frontend
 export const receiveErrors = errors => ({
@@ -68,7 +62,7 @@ export const login = user => dispatch => (
         })
 )
 
-// We wrote this one earlier
+
 export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken')
     APIUtil.setAuthToken(false)

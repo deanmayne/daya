@@ -26,15 +26,6 @@ class LoginForm extends React.Component {
     this.props.login(DemoUser).then(() => this.props.history.push("/newsfeed"));
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.setState({ user: nextProps.currentUser });
-  
-    }
-
-    this.setState({ errors: nextProps.errors });
-  }
-
 
   update(field) {
     return (e) =>

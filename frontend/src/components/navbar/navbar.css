@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
+.creators > a {
+    display: flex;
+    flex-direction: row;
+}
+
+.github {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+}
+
+.creators {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+
+}
+
+.foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 .user-auth-button {
@@ -9,13 +32,8 @@
     background-color: white;
     height: 30px;
     width: 30px;
-    /* margin-top: 20px;
-    margin-right: 20px; */
     margin-right: 20px;
     font-weight: 700; 
-    /* display: flex;
-    align-items: center; */
-
 }
 
 #nav-container {
@@ -33,17 +51,14 @@
 #button-container {
     display: flex;
     align-items: center;
-    /* margin-right: 10px; */
-    /* justify-content: space-between; */
 }
 
 #img-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 83vh;
     box-shadow: 0 2px 4px -2px gray;
-    /* background-image: url(yellowbg.jpg) */
 }
 
 #nav-header {
@@ -54,9 +69,8 @@
 }
 
 #splash-img {
-    height: 90%;
+    height: 95%;
     width: 32%;
-    /* width: 700px; */
     border-radius: 8px;
     margin: 5px;
 }
@@ -66,13 +80,11 @@
 }
 
 #header-container {
-    /* height: 498px;
-    width: 400px; */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90%;
+    height: 95%;
     width: 30%;
     background-image: url(whitebg.jpg);
     margin: 20px;
