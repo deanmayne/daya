@@ -7,36 +7,22 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      handle: "",
       password: "",
-      password2: "",
       errors: {},
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
     this.demoUser = this.demoUser.bind(this);
-
-  }
-
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.setState({ user: nextProps.currentUser });
-    }
-
-    this.setState({ errors: nextProps.errors });
   }
 
   demoUser(e) {
     e.preventDefault();
     let DemoUser = {
-      username: 'DemoUser', 
-      password: 'password'
-    }
-    this.props
-      .login(DemoUser)
-      .then(() => this.props.history.push("/newsfeed"));
+      username: "DemoUser",
+      password: "password",
+    };
+    this.props.login(DemoUser).then(() => this.props.history.push("/newsfeed"));
   }
 
   update(field) {
@@ -49,17 +35,25 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // debugger
+    
     let user = {
       username: this.state.username,
       password: this.state.password,
     };
 
-    this.props.signup(user).then(() => this.props.history.push("/newsfeed"));
+    this.props.signup(user)
+      .then()
+      .catch((err) => {
+        if(err) {
+          this.props.history.push('/signup')
+        } else {
+          this.props.history.push("/newsfeed")
+        }
+      })
   }
 
   renderErrors() {
-    // debugger
+   
     return (
       <ul>
         {Object.keys(this.props.errors).map((error, i) => (

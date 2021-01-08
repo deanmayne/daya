@@ -31,7 +31,6 @@ router.post("/register", (req, res) => {
     if (user) {
         errors.username = 'Username already exists';
         return res.status(400).json(errors);
-    //   return res.status(400).json({username: "User already exists"});
     } else {
       const newUser = new User({
         username: req.body.username,
@@ -46,8 +45,6 @@ router.post("/register", (req, res) => {
             .save()
             .then(user => {
             const payload = {id: user.id, username: user.username, following: user.following};
-            // const payload = {id: user.id, username: user.username};
-
             
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -82,7 +79,6 @@ router.post('/login', (req, res) => {
     if(!user){
       errors.username = 'user not found';
       return res.status(400).json(errors);
-      // return res.status(400).json('user doesnt exist')
     }
     
     ; 
@@ -137,9 +133,6 @@ router.post('/:username/follow', passport.authenticate('jwt', {session: false}),
                         }))
 
                      
-
-
-    // .then((user) => res.json({ follows: user.following }));
 
 })
 

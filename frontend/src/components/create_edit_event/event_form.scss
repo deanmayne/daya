@@ -1,23 +1,20 @@
 .form-field {
     display: flex;
     flex-direction: column;
-    // justify-content: space;
-    // height: 75%;
     width: 50%;
-    // height: 30%;
+
 }
 
 #event-form {
-    // height: 100vh;
+
     display: grid;
     justify-items: center;
-    // align-items: center;
+  
     grid-gap: 20px;
     width: 60%;
-    // height: 70%;
-    // background-image: url(./create_form-img.jpg);
+
     padding: 20px;
-    // height: 100%
+  
     color: white;
 
 }
@@ -52,12 +49,11 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    // height: 100vh;
-    // border: 1px black solid;
+   
     margin-top: 100px;
     width: 90%;
     margin-left: 100px;
-    // z-index: -1;
+   
 } 
 
 #form-img-container {
@@ -66,13 +62,13 @@ textarea {
     display: flex;
     align-items: center;
     background-color: rgb(181,190,195);
-    // margin-left: 100px;
+
 }
 
 #form-img {
     height: 100%;
     width: 100%;
-    // border: 1px solid pink;
+    
     z-index: 1;
 }
 

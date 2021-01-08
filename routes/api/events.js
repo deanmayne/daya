@@ -6,9 +6,6 @@ const passport = require('passport');
 const Event = require('../../models/Event')
 const validateEventInput = require('../../validation/events');
 
-//   do the get requests need to be protected? how to deal with following situation
-
-// get / for retrieving all events
 
 // Create Event 
 router.post('/',
