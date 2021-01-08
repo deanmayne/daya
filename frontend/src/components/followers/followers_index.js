@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Follow from '../newsfeed/follow'
-// import "./followers.scss";
 
 class FollowerIndex extends React.Component {
 
@@ -10,7 +9,7 @@ class FollowerIndex extends React.Component {
   }
 
   render() {
-    const { users, followers } = this.props;
+    const { followers } = this.props;
     
  
     const followItem = () => {

@@ -48,6 +48,8 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    // debugger
     let user = {
       username: this.state.username,
       password: this.state.password,
@@ -57,6 +59,7 @@ class SignupForm extends React.Component {
   }
 
   renderErrors() {
+    // debugger
     return (
       <ul>
         {Object.keys(this.props.errors).map((error, i) => (
