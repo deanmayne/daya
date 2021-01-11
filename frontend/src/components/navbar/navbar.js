@@ -20,23 +20,35 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                <div id="nav-container">
-
-                    <div id="logo-container">
-
-                        <img id="logo" alt="pic" src="sunlogo.png" />
-                        <Link to="/newsfeed"><h1 id="nav-header">DAYA </h1></Link>
-                        <div id="nav-links">
-
-                            <Link to={`/calendar/${this.props.user.username}`}><div id="nav-link"> My Calendar</div></Link>
-                            <Link to={`/suggestedfollows`}><div id="nav-link"> Suggested Follows</div></Link>
-                        </div>
-                    </div>
-                    <div id="button-container">
-                        <button id="edit-button" onClick={this.logoutUser} className="user-auth-button">Logout</button>
-                    </div>
+              <div id="nav-container">
+                <div id="logo-container">
+                  <img id="logo" alt="pic" src="sunlogo.png" />
+                  <Link to="/newsfeed">
+                    <h1 id="nav-header">DAYA </h1>
+                  </Link>
+                  <div id="nav-links">
+                    <Link to={`/newsfeed`}>
+                      <div id="nav-link"> Newsfeed</div>
+                    </Link>
+                    <Link to={`/calendar/${this.props.user.username}`}>
+                      <div id="nav-link"> My Calendar</div>
+                    </Link>
+                    <Link to={`/suggestedfollows`}>
+                      <div id="nav-link"> Suggested Follows</div>
+                    </Link>
+                  </div>
                 </div>
-            )
+                <div id="button-container">
+                  <button
+                    id="edit-button"
+                    onClick={this.logoutUser}
+                    className="user-auth-button"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            );
         } else {
             return (
                 <div>

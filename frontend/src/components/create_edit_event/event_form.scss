@@ -1,8 +1,10 @@
 .form-field {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     width: 50%;
 
+    label{
+        color: slateblue;
+    }
 }
 
 #event-form {
@@ -34,15 +36,20 @@ textarea {
     outline: none;
     font-size: 18px;
     height: 160px;
+    box-shadow: 0 2px 4px -2px gray;
 }
 
 #event-category {
     height: 40px;
     outline: none;
+      box-shadow: 0 2px 4px -2px gray;
 }
 #event-date {
     height: 40px;
     outline: none;
+    border: 1px solid grey;
+    box-shadow: 0 2px 4px -2px gray;
+
 }
 
 #form-container {
