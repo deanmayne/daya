@@ -1,6 +1,6 @@
 ## DAYA 
 
-DAYA is a social planner. Inspired by the desire to stay up to date on your friends calendars, DAYA allows for users to create, edit, or delte their own events, follow their friends events and view friends calendars.
+DAYA is a social planner. Inspired by the desire to stay up to date on your friends calendars, DAYA allows for users to create, edit, or delete their own events, follow their friends events and view friends calendars.
 
 Live Site: [DAYA](http://daya-mern.herokuapp.com/#/)
 
