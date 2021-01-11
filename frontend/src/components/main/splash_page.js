@@ -28,7 +28,7 @@ class SplashPage extends React.Component {
             <footer> 
                 <div className="foot">
                     <div className="github">
-                        <a href="https://github.com/Isabelleshafran/daya">Github <i className="fab fa-github"></i></a>
+                        <a href="https://github.com/deanmayne/daya">Github <i className="fab fa-github"></i></a>
                     </div>
                     <div className="creators">
                         <a href="https://www.linkedin.com/in/deanmayne/">Dean Mayne</a>
