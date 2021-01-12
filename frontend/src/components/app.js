@@ -20,7 +20,7 @@ const App = () => (
       <ProtectedRoute exact path="/newsfeed" component={Newsfeed} />
       <Route exact path="/calendar/:username" component={UserShowContainer} />
       <ProtectedRoute exact path="/suggestedfollows" component={Follows} />
-      <Route exact path ='/editEvent/:id' component = {EditFormContainer}/>
+      <Route exact path="/editEvent/:id" component={EditFormContainer} />
       <ProtectedRoute
         exact
         path="/createEvent"
