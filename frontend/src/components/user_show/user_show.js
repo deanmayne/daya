@@ -1,6 +1,6 @@
 import React from "react";
 import EventIndexItem from "../events/event_index_item";
-import "./show.css";
+import "../../stylesheets/application.scss";
 
 class UserShow extends React.Component {
   constructor(props) {
