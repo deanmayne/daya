@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import '../suggested_follows/follow.scss'
+import '../../stylesheets/application.scss'
 
 
 class Follow extends React.Component {

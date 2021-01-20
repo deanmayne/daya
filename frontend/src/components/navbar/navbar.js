@@ -1,81 +1,82 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import './navbar.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../../stylesheets/application.scss";
 
 class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.logoutUser = this.logoutUser.bind(this);
-        this.getLinks = this.getLinks.bind(this);
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+    // this.getLinks = this.getLinks.bind(this);
+  }
+
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
+    this.props.history.push("/");
+  }
+
+  // Selectively render links dependent on whether the user is logged in
+  render() {
+    if (this.props.loggedIn) {
+      return (
+        <div className="navbar">
+          <div className="logo-container">
+            <img
+              className="logo-container__image"
+              alt="pic"
+              src="sunlogo.png"
+            />
+            <Link to="/newsfeed">
+              <h1 className="logo-container__title">DAYA </h1>
+            </Link>
+            <Link to={`/newsfeed`} className="logo-container__link">
+              Newsfeed
+            </Link>
+            <Link
+              to={`/calendar/${this.props.user.username}`}
+              className="logo-container__link"
+            >
+
+              My Calendar
+            </Link>
+            <Link to={`/suggestedfollows`}
+              className="logo-container__link"> Suggested Follows
+            </Link>
+          </div>
+          <div className="button-container">
+            <button className="button button--sm" onClick={this.logoutUser}>
+              Logout
+            </button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="navbar">
+          <div className="logo-container">
+            <img
+              className="logo-container__image"
+              alt="pic"
+              src="sunlogo.png"
+            />
+            <Link to="/">
+              <h1 className="logo-container__title">DAYA </h1>
+            </Link>
+          </div>
+          <div className="buttons">
+            <Link to={"/login"} className="button button--sm">
+              {" "}
+              Log In
+            </Link>
+            <Link to={"/signup"} className="button button--sm">
+              {" "}
+              Sign Up
+            </Link>
+          </div>
+        </div>
+      );
     }
-
-    logoutUser(e) {
-        e.preventDefault();
-        this.props.logout();
-        this.props.history.push("/");
-    }
-
-
-    // Selectively render links dependent on whether the user is logged in
-    getLinks() {
-        if (this.props.loggedIn) {
-            return (
-              <div id="nav-container">
-                <div id="logo-container">
-                  <img id="logo" alt="pic" src="sunlogo.png" />
-                  <Link to="/newsfeed">
-                    <h1 id="nav-header">DAYA </h1>
-                  </Link>
-                  <div id="nav-links">
-                    <Link to={`/newsfeed`}>
-                      <div id="nav-link"> Newsfeed</div>
-                    </Link>
-                    <Link to={`/calendar/${this.props.user.username}`}>
-                      <div id="nav-link"> My Calendar</div>
-                    </Link>
-                    <Link to={`/suggestedfollows`}>
-                      <div id="nav-link"> Suggested Follows</div>
-                    </Link>
-                  </div>
-                </div>
-                <div id="button-container">
-                  <button
-                    id="edit-button"
-                    onClick={this.logoutUser}
-                    className="user-auth-button"
-                  >
-                    Logout
-                  </button>
-                </div>
-              </div>
-            );
-        } else {
-            return (
-                <div>
-                    <div id="nav-container">
-                        <div id="logo-container">
-
-                            <img id="logo" alt="pic" src="sunlogo.png" />
-                            <Link to="/"><h1 id="nav-header">DAYA </h1></Link>
-                        </div>
-                        <div id="button-container">
-    
-                        <Link to={'/login'}><button className="user-auth-button" id="login"><div>Log In</div></button></Link>
-                        <Link to={'/signup'}><button className="user-auth-button" id="edit-button">Sign Up</button></Link>
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-    }
-
-    render() {
-        return (
-            <div>             
-                    { this.getLinks()}
-            </div>
-        )
-    }
+  }
 }
 
 export default NavBar;

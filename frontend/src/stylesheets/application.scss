@@ -1,0 +1,47 @@
+@import "navbar.scss";
+@import "splash_page.scss";
+@import "session.scss";
+@import "newsfeed.scss";
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button,
+.button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: slateblue;
+  color: white;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: mediumslateblue;
+    outline: none;
+  }
+}
+
+
+.button {
+  &--lg {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+
+  &--sm {
+    font-size: 16.2px;
+  }
+
+}
+
+a {
+  text-decoration: none;
+}

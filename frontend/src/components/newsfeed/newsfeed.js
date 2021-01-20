@@ -2,8 +2,7 @@ import React from "react";
 import EventIndexItem from '../events/event_index_item'
 import SuggestedFollows from "../suggested_follows/suggested_follows_container";
 import FollowersIndex from "../followers/followers_container";
-// import Follow from './follow';
-import './newsfeed.scss';
+import "../../stylesheets/application.scss";
 
 
 class Newsfeed extends React.Component {

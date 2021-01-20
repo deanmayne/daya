@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import '../newsfeed/newsfeed.scss'
+import "../../stylesheets/application.scss";
 
 class EventIndexItem extends React.Component {
 

@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+input:focus {
+  border: darkslateblue 1.5px solid;
+  outline: none;
+}
+
+
+.session-form {
+  display: grid;
+  height: 536px;
+  justify-content: center;
+  align-content: center;
+  background-image: url(./login.jpg);
+
+    &__title {
+      color: darkslateblue;
+      font-family: "Lato", sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+    }
+
+
+      input {
+        border-radius: 8px;
+        border: 1.5px mediumslateblue solid;
+        padding: 10px;
+        margin-top: 13px;
+        width: 248px;
+        border-radius: 8px;
+        border: 1.5px mediumslateblue solid;
+      }
+
+      button {
+        width: 271px;
+        padding: 10px;
+        margin-top: 13px;
+      }
+    
+}

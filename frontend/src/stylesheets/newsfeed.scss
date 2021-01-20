@@ -1,3 +1,27 @@
+#newsfeed-container {
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+#newsfeed-events {
+    height: 100%;
+    width: 70%;
+}
+#newsfeed-following {
+    height: 100%;
+    width: 30%;
+}
+
+#event-header {
+    margin: 0px;
+}
+
+#header1 {
+    color: slateblue;
+    margin-left: 10px;
+}
+
 .follow-card {
     // border: 1px black solid;
     border-radius: 8px; 

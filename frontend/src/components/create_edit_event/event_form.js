@@ -64,7 +64,7 @@ class EventForm extends React.Component {
         return (
           <div id="form-img-container">
 
-            <img id="form-img" alt="pic" src="edit-form-img.jpg" />
+            <img id="form-img" alt="pic" src="create_event.jpg" />
           </div>
         )
       }
@@ -102,7 +102,7 @@ class EventForm extends React.Component {
 
           <button
             type="submit"
-            className="event-button"
+            className="button button--sm"
           >
             {formType === "Create An Event !" ? "Create Event" : "Edit Event"}
           </button>

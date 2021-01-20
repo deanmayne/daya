@@ -64,25 +64,6 @@ html {
     font-family: "Lato", sans-serif;
 }
 
-#edit-button {
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: 700px;
-    background-color:slateblue;
-    height: 34px;
-    width: 100px;
-    /* vertical-align: middle; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: center;
-    font-size: 16px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-} 
 
 #edit-button:focus {
     border: none;
