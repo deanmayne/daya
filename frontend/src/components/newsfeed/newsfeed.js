@@ -45,7 +45,8 @@ class Newsfeed extends React.Component {
                   <h2 id="header2">Upcoming Events </h2>
 
                 {events.map((event) => {
-                  if (currentUser.following.includes(event.user_id)) {
+                    const date = new Date().toISOString()
+                  if (currentUser.following.includes(event.user_id) && event.date > date) {
                     return <EventIndexItem key={event._id} event={event} currentUser={this.props.currentUser} />;
                   }
                   return null;
