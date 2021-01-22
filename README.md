@@ -26,6 +26,30 @@ Live Site: [DAYA](http://daya-mern.herokuapp.com/#/)
 
 ### Follow/Unfollow 
 * Ability fo follow and unfollow other DAYA users 
+* Custom association on Mongoose Model 
+
+
+```
+UserSchema.methods.follow = function(id) {
+  if(this.following.indexOf(id) === -1){
+    this.following.push(id)
+  }
+  return this.save();
+}
+```
+* Express post request
+```
+router.post('/:username/follow', passport.authenticate('jwt', {session: false}), (req, res) => {
+  let currentUser = req.user
+  User.findOne({ username: req.params.username })
+    .then((user) => currentUser.follow(user.id))
+    .then((user) => res.json({
+                          id: user.id,
+                          username: user.username,
+                          following: user.following,
+                        }))
+})
+```
 
 ![text](images/follow.gif)
 

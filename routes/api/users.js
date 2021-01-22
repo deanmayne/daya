@@ -121,8 +121,6 @@ router.get('/', (req, res) => {
 
 // following route 
 router.post('/:username/follow', passport.authenticate('jwt', {session: false}), (req, res) => {
-
-
   let currentUser = req.user
   User.findOne({ username: req.params.username })
     .then((user) => currentUser.follow(user.id))
@@ -131,9 +129,6 @@ router.post('/:username/follow', passport.authenticate('jwt', {session: false}),
                           username: user.username,
                           following: user.following,
                         }))
-
-                     
-
 })
 
 router.delete('/:username/unfollow', passport.authenticate('jwt', {session: false}), (req, res) => {
